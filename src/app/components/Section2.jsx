@@ -1,13 +1,10 @@
-"use client"
-
-
 import React from 'react';
 import { FaAward } from "react-icons/fa";
 
 
 const Hero = () => {
   return (
-    <section className="flex flex-col md:flex-row  items-center justify-between bg-gray-10  p-5 md:p-16 md:ml-16">
+    <section className="flex flex-col md:flex-row  items-center justify-between bg-gray-10  p-5 md:p-16 ">
       {/* Left Side - Images and Statistics */}
       <div className="flex gap-4">
         {/* Image 1 */}

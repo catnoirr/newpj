@@ -9,7 +9,7 @@ const FAQs = () => {
   };
 
   return (
-    <div className="bg-gray-100   flex items-center justify-center sm:ml-20">
+    <div className="bg-gray-100   flex items-center justify-center ">
       <div className="bg-white p-8  shadow-lg  flex flex-col sm:gap-14 sm:flex-row ">
         <div className="flex-1">
             <h1 className="text-2xl font-bold text-purple-900 mb-4">Digital Marketing FAQs</h1>

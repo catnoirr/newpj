@@ -1,5 +1,3 @@
-"use client"
-
 import React from 'react';
 import { FaUserGraduate, FaChessRook, FaBullseye, FaUsers, FaTheaterMasks } from 'react-icons/fa';
 

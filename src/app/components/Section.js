@@ -1,10 +1,8 @@
-"use client"
-
 import React from 'react';
 
 const HowItWorks = () => {
   return (
-    <section className="bg-gray-100 py-16 md:ml-24">
+    <section className="bg-gray-100 py-16 ">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center md:mb-32 mb-12">How It Works?</h2>
         

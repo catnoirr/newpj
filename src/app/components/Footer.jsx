@@ -1,11 +1,9 @@
-"use client"
-
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-10 px-6 md:px-16 md:ml-20">
+    <footer className="bg-black text-white py-10 px-6 md:px-16 md:ml-20 border-red-700 border">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mt-6">
         {/* Logo and Description */}
         <div className="flex flex-col">

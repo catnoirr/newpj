@@ -1,5 +1,3 @@
-"use client"
-
 import React from 'react';
 import Sidebar from "./Sidebar";
 import Image from 'next/image';
@@ -21,7 +19,7 @@ export default function Home() {
         </button>
       </div>
 
-      <main className="flex flex-col  md:flex-row justify-between items-center gap-16 sm:gap-20 p-6 mt-20 sm:mt-40 md:ml-20">
+      <main className="flex flex-col  md:flex-row justify-between items-center gap-16 sm:gap-20 p-6 mt-20 sm:mt-40 ">
         <div className="md:flex-1">
           <div className="flex items-center mb-4  bg-gray-200 border rounded-xl shadow p-2 w-64 sm:w-72">
             <i> <FaAward className="text-4xl text-red-800" /></i>
@@ -112,7 +110,7 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <div className="flex flex-wrap justify-between items-center py-4 px-4 md:ml-28 md:mr-6 gap-4">
+      <div className="flex flex-wrap justify-between items-center py-4 px-4  gap-4">
   {/* Heading */}
   <div className="w-full md:w-52">
     <h1 className="text-lg md:text-xl font-semibold text-center md:text-left">

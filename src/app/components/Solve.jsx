@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import Sidebar from "./Sidebar";
 import Image from 'next/image';
 import { FaAward, FaQuoteLeft, FaStar } from "react-icons/fa";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -12,7 +13,7 @@ export default function Home() {
    
     
      
-      <main className="flex flex-col md:flex-row justify-between items-center gap-16 sm:gap-20 p-6 mt-20 sm:mt-40 md:ml-20">
+      <main className="flex flex-col md:flex-row justify-between items-center gap-16 sm:gap-20 p-6 mt-20 sm:mt-40 ">
         <div className="md:flex-1">
           <div className="flex items-center mb-4 bg-gray-200 border rounded-xl shadow p-2 w-64 sm:w-72">
             <i><FaAward className="text-4xl text-red-800" /></i>
