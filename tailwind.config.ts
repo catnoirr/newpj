@@ -11,6 +11,18 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        purtle: {
+
+          // 100:'#4F3A6F',
+          // 200:'#4F3A6F',
+          // 300:'#4F3A6F',
+          400:'#4F3A6F',
+          500:'#4F3A6F',
+          200:'#4F3A6F',
+          700:'#4F3A6F',
+          // 800:'#4F3A6F',
+
+        }
       },
     },
   },

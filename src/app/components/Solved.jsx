@@ -32,7 +32,7 @@ const Testimonials = () => {
                 {/* Grid with 2 Testimonial Cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                   {/* Testimonial Card 1 */}
-                  <div className="bg-white p-6 rounded-lg shadow-md flex flex-col">
+                  <div className=" p-6 rounded-lg  flex flex-col">
                     <div className="flex items-center mb-4">
                       <FaQuoteLeft className="text-purple-600 text-2xl mr-2" />
                       <div className="flex space-x-1">
@@ -53,7 +53,7 @@ const Testimonials = () => {
                   </div>
 
                   {/* Testimonial Card 2 */}
-                  <div className="bg-white p-6 rounded-lg shadow-md flex flex-col">
+                  <div className=" p-6 rounded-lg  flex flex-col">
                     <div className="flex items-center mb-4">
                       <FaQuoteLeft className="text-purple-600 text-2xl mr-2" />
                       <div className="flex space-x-1">
