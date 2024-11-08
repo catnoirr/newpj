@@ -1,6 +1,5 @@
 "use client";
 import React from 'react';
-import Sidebar from "./Sidebar";
 import Image from 'next/image';
 import { FaAward, FaQuoteLeft, FaStar } from "react-icons/fa";
 import { Swiper, SwiperSlide } from 'swiper/react';
