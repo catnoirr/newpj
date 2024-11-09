@@ -86,18 +86,20 @@ function SidebarItem({ icon, label, route, isExpanded, textColor = "text-white" 
 
   return (
     <div className="relative group flex justify-center">
-      <Link href={route}>
-        <button
-          className={`flex items-center ${isExpanded ? "justify-start w-full" : "justify-center"} p-3 rounded-lg cursor-pointer 
-          ${isActive
-            ? "text-yellow-300 bg-white"
-            : `${textColor} hover:bg-white hover:text-black`}
-          `}
-        >
-          <span className="text-lg">{icon}</span>
-          {isExpanded && <span className="ml-3">{label}</span>}
-        </button>
-      </Link>
+   <Link href={route}>
+  <button
+    className={`flex items-center ${isExpanded ? "justify-start w-full" : "justify-center"} p-3 rounded-lg cursor-pointer 
+      ${isActive
+        ? `${isExpanded ? "text-yellow-300" : "text-yellow-300 bg-white"}` 
+        : `${textColor} ${isExpanded ? "hover:bg-none hover:text-yellow-300" : "hover:bg-white hover:text-black"}`}
+    `}
+  >
+    <span className="text-lg">{icon}</span>
+    {isExpanded && <span className="ml-3">{label}</span>}
+  </button>
+</Link>
+
+
 
       {!isExpanded && (
         <span className="absolute left-16 top-1/2 -translate-y-1/2 px-2 py-1 text-sm bg-purcel-800 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
