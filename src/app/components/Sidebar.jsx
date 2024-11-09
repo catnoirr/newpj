@@ -51,7 +51,7 @@ export default function Sidebar() {
           {/* Expand/Collapse Button with responsive positioning */}
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className={`absolute ${isMobileMenuOpen ? "-left-4" : "lg:right-[-14px]"} top-1/2 transform -translate-y-1/2 w-7 h-7 rounded-md bg-white shadow-md flex items-center justify-center text-purple-800 z-50`}
+            className={`absolute ${isMobileMenuOpen ? "-left-4" : "lg:right-[-14px]"} top-1/2 transform -translate-y-1/2 w-7  h-7  rounded-md bg-white shadow-md flex items-center justify-center text-purple-800 z-50`}
           >
             {isExpanded ? <FaChevronLeft /> : <FaChevronRight />}
           </button>

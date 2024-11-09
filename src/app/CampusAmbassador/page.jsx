@@ -7,6 +7,7 @@ import RoleAndResponsibility from './components/RoleAndResponsibilities'; // Adj
 import HowItWorks from './components/HowItWorks';
 import VideoAndStats from './components/VideoAndStats'
 import Stats from './components/Stats'
+import JoinCommunity from './components/JoinCommunity'
 import FAQ from '../components/Faq'
 const Page = () => {
   return (
@@ -19,7 +20,7 @@ const Page = () => {
       <VideoAndStats/>
        <Stats/>
       <FAQ/>
-
+      <JoinCommunity/>
     </div>
   );
 };
