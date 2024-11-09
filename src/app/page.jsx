@@ -10,7 +10,7 @@ import ContactSection from './components/ContactSection.jsx'
 const Page = () => {
   return (
     
-    <div className='bg-gray-100'>
+    <div className=''>
       <Hero />
      
       <SecondSection/>

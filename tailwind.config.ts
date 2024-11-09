@@ -22,7 +22,11 @@ const config: Config = {
           700:'#4F3A6F',
           // 800:'#4F3A6F',
 
+        },
+        grey: {
+          800: '#6A6A6A',
         }
+
       },
     },
   },
