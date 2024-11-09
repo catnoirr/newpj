@@ -25,7 +25,10 @@ const config: Config = {
         },
         grey: {
           800: '#6A6A6A',
-        }
+        },
+        purcel: {
+          800: '#341266',
+        },
 
       },
     },

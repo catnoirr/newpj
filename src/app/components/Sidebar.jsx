@@ -34,7 +34,7 @@ export default function Sidebar() {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 ${isMobileMenuOpen ? "right-0" : "-right-full"} lg:left-0 h-screen bg-purple-800 text-white transition-all duration-300 ${
+        className={`fixed top-0 ${isMobileMenuOpen ? "right-0" : "-right-full"} lg:left-0 h-screen bg-purcel-800 text-white transition-all duration-300 ${
           isExpanded ? "w-48" : "w-20"
         } z-40`}
       >

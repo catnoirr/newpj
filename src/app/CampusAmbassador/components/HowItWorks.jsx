@@ -26,7 +26,8 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="px-6 py-12 bg-white ">
+    <section className='bg-gray-100 flex justify-center align-middle md:px-14 px-8 '>
+      <div className='bg-white py-12'>
       <div className="text-center mb-8">
         <h2 className="text-5xl font-bold">
           How it works in <span className="text-green-600">4 easy steps</span>
@@ -43,6 +44,7 @@ const HowItWorks = () => {
             <p className="text-gray-600">{step.description}</p>
           </div>
         ))}
+      </div>
       </div>
     </section>
   );
