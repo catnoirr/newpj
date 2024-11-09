@@ -13,7 +13,7 @@ export default function JoinCommunity() {
       <p className=" text-gray-500 font-medium  mb-2">Receive News, Stay updated and special Offers.</p>
 
       {/* Button */}
-      <button className=" relative  left-16 bg-purple-700 text-white px-6 py-2 rounded-lg font-semibold hover:bg-purple-800 transition-colors mb-4">
+      <button className=" relative  left-16 bg-purtle-700 text-white px-6 py-2 rounded-lg font-semibold hover:bg-purtle-400 transition-colors mb-4">
         Join Community
       </button>
 
