@@ -57,7 +57,7 @@ export default function Sidebar() {
           }`}
         >
           <SidebarItem icon={<FaHome />} label="Dashboard" route="/" isExpanded={isExpanded} />
-          <SidebarItem icon={<FaUser />} label="Audience" route="/audience" isExpanded={isExpanded} />
+          <SidebarItem icon={<FaUser />} label="Audience" route="/CampusAmbassador" isExpanded={isExpanded} />
           <SidebarItem icon={<FaFileAlt />} label="Posts" route="/posts" isExpanded={isExpanded} />
           <SidebarItem icon={<FaCalendarAlt />} label="Schedules" route="/schedules" isExpanded={isExpanded} />
 
@@ -100,7 +100,7 @@ function SidebarItem({ icon, label, route, isExpanded, textColor = "text-white" 
       </Link>
 
       {!isExpanded && (
-        <span className="absolute left-16 top-1/2 -translate-y-1/2 px-2 py-1 text-sm bg-purple-900 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+        <span className="absolute left-16 top-1/2 -translate-y-1/2 px-2 py-1 text-sm bg-purcel-800 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
           {label}
           <span className="absolute left-[-15px] top-1/2 transform -translate-y-1/2 w-3 h-1 border-t-4 border-b-4 border-r-4 border-transparent border-r-purple-900"></span>
         </span>
