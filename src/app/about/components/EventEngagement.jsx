@@ -2,7 +2,7 @@ import React from 'react';
 
 function EventEngagement() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-white text-center p-6">
+    <div className="flex flex-col items-center justify-center  bg-white text-center p-6">
       <h1 className="text-5xl font-bold mb-4">
         Maximize Engagement <br /> at Your Next Big Event!
       </h1>

@@ -19,7 +19,7 @@ const CampusImpact = () => {
           </div>
           
           {/* Mission card */}
-          <div className="bg-gray-200 p-4 md:p-6 sm:h-[450]">
+          <div className=" p-4 md:p-6 sm:h-[450]">
             <button className="bg-purtle-700 text-white py-2 px-4 md:py-4 md:px-8 rounded-xl hover:bg-purtle-500 mb-4 ml-8">
               Our Mission
             </button>
@@ -42,7 +42,7 @@ const CampusImpact = () => {
                 <FaCheck className="text-white  bg-purtle-700 mr-2 p-1 rounded-full" />Real Engagement
               </li>
             </ul>
-            <div className='relative ,d:top-10 md:left-48'><img src="image45.png " alt="" className='w-32'/></div>
+            <div className='relative md:top-10 md:left-48'><img src="image45.png " alt="" className='w-32'/></div>
 
             </div>
             
@@ -52,7 +52,7 @@ const CampusImpact = () => {
         {/* Right content - Image with overlay */}
         <div className="lg:w-1/2 relative flex justify-center">
           <img
-            src="image 44.png" // replace with the actual path to your image
+            src="newpic.png" // replace with the actual path to your image
             alt="Laptop with notebook"
             className="w-full h-auto md:w-[500px] lg:w-[666px] object-cover "
           />
