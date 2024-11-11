@@ -29,13 +29,13 @@ function RecentBlogPosts() {
     <section className="p-6 bg-white">
       {/* Tag Filters */}
       <div className="flex space-x-4 mb-4">
-        <button className="text-sm text-purple-700 border border-purple-700 px-3 py-1 rounded-full hover:bg-purple-700 hover:text-white transition">
+        <button className="text-sm text-blue-600  bg-blue-100 px-3 py-1 rounded-full hover:bg-beige-400 hover:text-blue-600  transition">
           User
         </button>
-        <button className="text-sm text-purple-700 border border-purple-700 px-3 py-1 rounded-full hover:bg-purple-700 hover:text-white transition">
+        <button className="text-sm text-blue-600  bg-blue-200 px-3 py-1 rounded-full hover:bg-beige-400 hover:text-blue-600  transition">
           Vendor
         </button>
-        <button className="text-sm text-purple-700 border border-purple-700 px-3 py-1 rounded-full hover:bg-purple-700 hover:text-white transition">
+        <button className="text-sm text-blue-600 bg-blue-100  px-3 py-1 rounded-full hover:bg-beige-400 hover:text-blue-600 transition">
           Brand
         </button>
       </div>

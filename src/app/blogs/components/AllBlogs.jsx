@@ -2,9 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../../../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore';
-import { FiArrowUpRight } from 'react-icons/fi'; // Import the icon
+import { FiArrowUpRight, FiArrowLeft, FiArrowRight } from 'react-icons/fi';
+
 function BlogPostsGrid() {
   const [blogPosts, setBlogPosts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 6;
 
   useEffect(() => {
     const fetchBlogPosts = async () => {
@@ -24,18 +27,31 @@ function BlogPostsGrid() {
     fetchBlogPosts();
   }, []);
 
+  // Calculate total pages
+  const totalPages = Math.ceil(blogPosts.length / postsPerPage);
+
+  // Get current page's blog posts
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = blogPosts.slice(indexOfFirstPost, indexOfLastPost);
+
+  // Handle page change
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
     <section className="p-8 bg-white">
       <h2 className="text-3xl font-semibold text-gray-800 mb-6">All blog posts</h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {blogPosts.map((post) => (
+        {currentPosts.map((post) => (
           <a
             key={post.id}
             href={post.blogUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className=" overflow-hidden  hover:shadow-md transition-shadow duration-200"
+            className="overflow-hidden hover:shadow-md transition-shadow duration-200"
           >
             <img
               src={post.imageUrl}
@@ -48,8 +64,7 @@ function BlogPostsGrid() {
 
               <h3 className="text-lg font-bold text-gray-800 flex justify-between items-center mb-2">
                 {post.title}
-                <FiArrowUpRight className="w-5 h-5 transform " /> {/* Icon with rotation */}
-
+                <FiArrowUpRight className="w-5 h-5 transform rotate-45" />
               </h3>
 
               <p className="text-gray-600 mb-4">{post.description}</p>
@@ -62,6 +77,39 @@ function BlogPostsGrid() {
             </div>
           </a>
         ))}
+      </div>
+
+      {/* Pagination Controls */}
+      <div className="flex justify-around items-center space-x-2 mt-8">
+        <button
+          onClick={() => handlePageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+          className="text-gray-500 hover:text-gray-700 flex items-center"
+        >
+          <FiArrowLeft className="mr-1" />
+          Previous
+        </button>
+
+        <div className="flex space-x-1">
+          {Array.from({ length: totalPages }, (_, index) => (
+            <button
+              key={index + 1}
+              onClick={() => handlePageChange(index + 1)}
+              className={`px-3 py-1 text-gray-700 rounded ${currentPage === index + 1 ? ' text-purple-700' : 'hover:bg-gray-200'}`}
+            >
+              {index + 1}
+            </button>
+          ))}
+        </div>
+
+        <button
+          onClick={() => handlePageChange(currentPage + 1)}
+          disabled={currentPage === totalPages}
+          className="text-gray-500 hover:text-gray-700 flex items-center"
+        >
+          Next
+          <FiArrowRight className="ml-1" />
+        </button>
       </div>
     </section>
   );
