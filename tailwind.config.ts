@@ -44,6 +44,14 @@ const config: Config = {
           400: '#FFF6ED',
           
         },
+        green: {
+          100: '#34B9662B'
+          
+        },
+        grays: {
+          100: '#F2F0F5'
+          
+        },
 
       },
     },

@@ -35,4 +35,9 @@ text-align: left;
 /* *{
   border: 1px solid black;
 } */
- 
+ .custome{
+  background-color: rgba(52, 185, 102, 0.07);
+ }
+ body{
+  background-color: rgba(242, 240, 245, 1);
+ }
