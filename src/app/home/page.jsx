@@ -7,6 +7,7 @@ import Blog from './components/Blog'
 import Success from './components/Success'
 import FAQ from './components/FAQ'
 import EventEngagement from './components/EventEngagement'
+import Campaign from './components/Campaign'
 
 
 const Page = () => {
@@ -15,6 +16,7 @@ const Page = () => {
       <Hero/>
       <DigitalAgency/>
       <OurClient/>
+      <Campaign/>
       <HowsItWork/>
       <div className=' my-8 '>
         <img src="./image 43.png" alt="image "  />
