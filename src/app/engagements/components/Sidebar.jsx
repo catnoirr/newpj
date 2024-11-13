@@ -66,11 +66,11 @@ export default function Sidebar() {
           <SidebarItem icon={<FaHome />} label="Home" route="/home" isExpanded={isExpanded} />
           <SidebarItem icon={<FaUser />} label="Audience" route="/CampusAmbassador" isExpanded={isExpanded} />
           <SidebarItem icon={<FaFileAlt />} label="Blogs" route="/blogs" isExpanded={isExpanded} />
-          <SidebarItem icon={<FaCalendarAlt />} label="About" route="/about" isExpanded={isExpanded} />
+          <SidebarItem icon={<FaCalendarAlt />} label="Schedules" route="/schedules" isExpanded={isExpanded} />
 
           <div className="border-t border-gray-300 my-2"></div>
 
-          <SidebarItem icon={<FaQuestionCircle />} label="Engagements" route="/engagements" isExpanded={isExpanded} />
+          <SidebarItem icon={<FaQuestionCircle />} label="Help" route="/help" isExpanded={isExpanded} />
           <SidebarItem icon={<FaSignOutAlt />} label="Logout" route="/logout" isExpanded={isExpanded} textColor="text-red-500" />
         </div>
       </div>
