@@ -1,5 +1,5 @@
 import React from 'react';
-import Sidebar from "./Sidebar";
+// import Sidebar from "./Sidebar";
 import Image from 'next/image';
 import { FaAward } from "react-icons/fa";
 export default function Home() {
@@ -9,9 +9,9 @@ export default function Home() {
         {/* Header can contain elements like profile icon, notifications etc. */}
       </header>
 
-      <div>
+      {/* <div>
         <Sidebar />
-      </div>
+      </div> */}
 
       <div className="relative p-5">
         <button className="absolute right-4 sm:right-12 text-black border px-4 py-2 rounded border-black text-sm sm:text-base">
