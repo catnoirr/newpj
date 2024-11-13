@@ -5,7 +5,7 @@ import { FaAward } from "react-icons/fa";
 export default function Home() {
   return (
     <div className="">
-      <header className="bg-purple-900 w-full py-6 flex justify-end pr-4">
+      <header className="bg-purtle-700 w-full py-6 flex justify-end pr-4">
         {/* Header can contain elements like profile icon, notifications etc. */}
       </header>
 
@@ -63,40 +63,40 @@ export default function Home() {
             />
 
             {/* Top Card - Meeting With */}
-            <div className="absolute -top-5 -right-4 sm:-right-8 bg-purple-900 text-white p-3 rounded-lg shadow-lg flex items-center space-x-2 z-20">
+            <div className="absolute -top-5 -right-4 sm:-right-8 bg-purtle-700 text-white p-3 rounded-lg shadow-lg flex items-center space-x-2 z-20">
               <span className="text-xs sm:text-sm font-semibold">Meeting with</span>
               <div className="flex -space-x-2">
                 <img
                   src="/user1.jpeg" // Replace with actual path
                   alt="Avatar 1"
-                  className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-purple-800"
+                  className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-purtle-700"
                 />
                 <img
                   src="/user1.jpeg" // Replace with actual path
-                  className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-purple-800"
+                  className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-purtle-700"
                   alt="Avatar 2"
                 />
               </div>
             </div>
 
             {/* Bottom Card - Customer Satisfaction */}
-            <div className="absolute bottom-5 -left-10 sm:-left-28 bg-purple-900 text-white p-4 rounded-lg shadow-lg w-40 sm:w-48 z-20">
+            <div className="absolute bottom-5 -left-10 sm:-left-28 bg-purtle-700 text-white p-4 rounded-lg shadow-lg w-40 sm:w-48 z-20">
               <p className="text-xs sm:text-sm font-semibold">Our Lovely Customers</p>
               <div className="flex items-center space-x-2 mt-1">
                 <div className="flex -space-x-2">
                   <img
                     src="/user1.jpeg" // Replace with actual path
-                    className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 border-purple-800"
+                    className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 border-purtle-700"
                     alt="Avatar 3"
                   />
                   <img
                     src="/user1.jpeg" // Replace with actual path
-                    className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 border-purple-800"
+                    className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 border-purtle-700"
                     alt="Avatar 4"
                   />
                   <img
                     src="/user1.jpeg" // Replace with actual path
-                    className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 border-purple-800"
+                    className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 border-purtle-700"
                     alt="Avatar 5"
                   />
                 </div>

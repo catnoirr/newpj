@@ -20,7 +20,7 @@ const SponsorshipSection = () => {
           <div className="space-y-6 text-left">
             {/* College Fest */}
             <div className="flex items-start space-x-4">
-              <div className="bg-purple-800 p-3 rounded-xl">
+              <div className="bg-purtle-700 p-3 rounded-xl">
                 <FaUserGraduate className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -31,7 +31,7 @@ const SponsorshipSection = () => {
 
             {/* Product Launch Events */}
             <div className="flex items-start space-x-4">
-              <div className="bg-purple-800 p-3 rounded-xl">
+              <div className="bg-purtle-700 p-3 rounded-xl">
                 <FaChessRook className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -42,7 +42,7 @@ const SponsorshipSection = () => {
 
             {/* B2B Conferences */}
             <div className="flex items-start space-x-4">
-              <div className="bg-purple-800 p-3 rounded-xl">
+              <div className="bg-purtle-700 p-3 rounded-xl">
                 <FaBullseye className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -53,7 +53,7 @@ const SponsorshipSection = () => {
 
             {/* Corporate Gatherings */}
             <div className="flex items-start space-x-4">
-              <div className="bg-purple-800 p-3 rounded-xl">
+              <div className="bg-purtle-700 p-3 rounded-xl">
                 <FaUsers className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -64,7 +64,7 @@ const SponsorshipSection = () => {
 
             {/* Cultural Events */}
             <div className="flex items-start space-x-4">
-              <div className="bg-purple-800 p-3 rounded-xl">
+              <div className="bg-purtle-700 p-3 rounded-xl">
                 <FaTheaterMasks className="w-6 h-6 text-white" />
               </div>
               <div>

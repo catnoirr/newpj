@@ -7,7 +7,7 @@ const Testimonials = () => {
   return (
     <section className="bg-gray-50 py-12 px-4 md:px-8 lg:px-16">
       <div className="max-w-6xl mx-auto text-center">
-        <p className="text-sm text-purple-600 font-semibold mb-2">Testimonials & Reviews</p>
+        <p className="text-sm text-purtle-400 font-semibold mb-2">Testimonials & Reviews</p>
         <h2 className="text-3xl font-bold text-gray-900 mb-4">See how we've helped our clients succeed</h2>
         <p className="text-gray-600 mb-8">More than 1500+ agencies using Ooh Point</p>
 
@@ -17,7 +17,7 @@ const Testimonials = () => {
             {/* Testimonial 1 */}
             <div className="bg-white p-6 rounded-lg shadow-md flex flex-col">
               <div className="flex items-center mb-4">
-                <FaQuoteLeft className="text-purple-600 text-2xl mr-2" />
+                <FaQuoteLeft className="text-purtle-400 text-2xl mr-2" />
                 <div className="flex space-x-1">
                   {Array(5).fill().map((_, i) => (
                     <FaStar key={i} className="text-yellow-400" />
@@ -38,7 +38,7 @@ const Testimonials = () => {
             {/* Testimonial 2 */}
             <div className="bg-white p-6 rounded-lg shadow-md flex flex-col">
               <div className="flex items-center mb-4">
-                <FaQuoteLeft className="text-purple-600 text-2xl mr-2" />
+                <FaQuoteLeft className="text-purtle-400 text-2xl mr-2" />
                 <div className="flex space-x-1">
                   {Array(5).fill().map((_, i) => (
                     <FaStar key={i} className="text-yellow-400" />
@@ -60,7 +60,7 @@ const Testimonials = () => {
           {/* Right Side - Image */}
           <div className="relative">
             <img src="/workspace.jpg" alt="Workspace" className="rounded-lg shadow-md w-full h-auto" />
-            <div className="absolute top-4 left-4 bg-purple-800 text-white text-xs font-semibold px-3 py-1 rounded-lg">
+            <div className="absolute top-4 left-4 bg-purtle-700 text-white text-xs font-semibold px-3 py-1 rounded-lg">
               Trusted Sponsorship Partner Since 2021
             </div>
             <div className="absolute bottom-4 left-4 bg-gray-800 text-white text-sm px-3 py-1 rounded-md">

@@ -4,7 +4,7 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 const ContactSection = () => {
   return (
     <div className="flex justify-center mt-28 px-4 md:px-0">
-      <div className="bg-purple-900 text-white p-8 md:p-12  flex flex-col md:flex-row items-center justify-between w-full max-w-4xl space-y-8 md:space-y-0 md:space-x-8 relative top-8">
+      <div className="bg-purtle-700 text-white p-8 md:p-12  flex flex-col md:flex-row items-center justify-between w-full max-w-4xl space-y-8 md:space-y-0 md:space-x-8 relative top-8">
         
         {/* Left section - Heading and input box */}
         <div className="flex-1 max-w-md text-center md:text-left">

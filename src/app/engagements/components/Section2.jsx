@@ -19,7 +19,7 @@ const Hero = () => {
             <p className="text-xl font-bold">10+</p>
             <p className="text-sm">Years of experience</p>
           </div>
-          <div className="bg-purple-800 text-white text-center py-4 px-6 rounded-md">
+          <div className="bg-purtle-700 text-white text-center py-4 px-6 rounded-md">
             <p className="text-xl font-bold">1.2K</p>
             <p className="text-sm">Happy Customers</p>
           </div>
@@ -61,7 +61,7 @@ const Hero = () => {
             Boost Event Buzz
           </li>
         </ul>
-        <button className="mt-6 bg-purple-800 text-white py-2 px-6 rounded-md hover:bg-purple-700">
+        <button className="mt-6 bg-purtle-700 text-white py-2 px-6 rounded-md hover:bg-purple-900">
           Discover more
         </button>
       </div>

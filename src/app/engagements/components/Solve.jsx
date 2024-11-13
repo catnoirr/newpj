@@ -34,7 +34,7 @@ export default function Home() {
             <SwiperSlide className="bg-gray-200"> {/* Set gray background for each slide */}
               <div className="p-6 rounded-lg shadow-md flex flex-col">
                 <div className="flex items-center mb-4">
-                  <FaQuoteLeft className="text-purple-600 text-2xl mr-2" />
+                  <FaQuoteLeft className="text-purtle-400 text-2xl mr-2" />
                   <div className="flex space-x-1">
                     {Array(5).fill().map((_, i) => (
                       <FaStar key={i} className="text-yellow-400" />
@@ -56,7 +56,7 @@ export default function Home() {
             <SwiperSlide className="bg-gray-200"> {/* Set gray background for each slide */}
               <div className="p-6 rounded-lg shadow-md flex flex-col">
                 <div className="flex items-center mb-4">
-                  <FaQuoteLeft className="text-purple-600 text-2xl mr-2" />
+                  <FaQuoteLeft className="text-purtle-400 text-2xl mr-2" />
                   <div className="flex space-x-1">
                     {Array(5).fill().map((_, i) => (
                       <FaStar key={i} className="text-yellow-400" />
@@ -93,20 +93,20 @@ export default function Home() {
             alt="Laptop and plant on table"
             className="rounded-lg w-full relative z-10"
           />
-          <div className="absolute -top-5 -right-4 sm:-right-8 bg-purple-900 text-white p-3 rounded-lg shadow-lg flex items-center space-x-2 z-20">
+          <div className="absolute -top-5 -right-4 sm:-right-8 bg-purtle-700 text-white p-3 rounded-lg shadow-lg flex items-center space-x-2 z-20">
             <span className="text-xs sm:text-sm font-semibold">Meeting with</span>
             <div className="flex -space-x-2">
-              <img src="/user1.jpeg" alt="Avatar 1" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-purple-800" />
-              <img src="/user1.jpeg" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-purple-800" alt="Avatar 2" />
+              <img src="/user1.jpeg" alt="Avatar 1" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-purtle-400" />
+              <img src="/user1.jpeg" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-purtle-400" alt="Avatar 2" />
             </div>
           </div>
-          <div className="absolute bottom-5 -left-10 sm:-left-28 bg-purple-900 text-white p-4 rounded-lg shadow-lg w-40 sm:w-48 z-20">
+          <div className="absolute bottom-5 -left-10 sm:-left-28 bg-purtle-700 text-white p-4 rounded-lg shadow-lg w-40 sm:w-48 z-20">
             <p className="text-xs sm:text-sm font-semibold">Our Lovely Customers</p>
             <div className="flex items-center space-x-2 mt-1">
               <div className="flex -space-x-2">
-                <img src="/user1.jpeg" className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 border-purple-800" alt="Avatar 3" />
-                <img src="/user1.jpeg" className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 border-purple-800" alt="Avatar 4" />
-                <img src="/user1.jpeg" className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 border-purple-800" alt="Avatar 5" />
+                <img src="/user1.jpeg" className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 border-purtle-400" alt="Avatar 3" />
+                <img src="/user1.jpeg" className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 border-purtle-400" alt="Avatar 4" />
+                <img src="/user1.jpeg" className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 border-purtle-400" alt="Avatar 5" />
               </div>
               <span className="text-xs sm:text-sm">5K+</span>
             </div>
