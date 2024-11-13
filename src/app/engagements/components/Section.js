@@ -6,14 +6,14 @@ const HowItWorks = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center md:mb-32 mb-12">How It Works?</h2>
         
-        <div className="relative flex flex-col md:flex-row items-center  justify-center bg-purtle-700">
+        <div className="relative flex flex-col md:flex-row items-center justify-center    bg-purtle-700 ">
           {/* Left Steps */}
-          <div className="flex flex-col items-center md:items-end space-y-8 md:space-y-12 md:mr-16">
+          <div className="flex flex-col items-center md:items-end space-y-8 md:space-y-12  ml-20 ">
             {/* Step 1 */}
-            <div className="bg-purtle-700 text-white p-6 rounded-md  max-w-xs mx-auto">
+            <div className="bg-purtle-700 text-white p-6 rounded-md   ">
       {/* Step Number Box */}
       <div className="  h-8 flex items-center justify-end w-full rounded-md mb-4 mx-auto">
-        <p className="text-sm font-bold bg-purtle-700 p-3 py-2 rounded-md ">1</p>
+        <p className="text-sm font-bold bg-purple-800 p-3 py-2 rounded-md ">1</p>
       </div>
 
       {/* Main Text */}
@@ -25,10 +25,10 @@ const HowItWorks = () => {
             
             {/* Step 2 */}
             
-              <div className="bg-purtle-700 text-white p-6 rounded-md  max-w-xs mx-auto">
+              <div className="bg-purtle-700 text-white p-6 rounded-md w-full ">
       {/* Step Number Box */}
       <div className="  h-8 flex items-center justify-end w-full rounded-md mb-4 mx-auto">
-        <p className="text-sm font-bold bg-purtle-700 p-3 py-2 rounded-md ">2</p>
+        <p className="text-sm font-bold bg-purple-800 p-3 py-2 rounded-md ">2</p>
       </div>
 
       {/* Main Text */}
@@ -51,17 +51,17 @@ const HowItWorks = () => {
           </div>
 
           {/* Right Steps */}
-          <div className="flex flex-col items-center md:items-start space-y-8 md:space-y-12 md:ml-16">
+          <div className="flex flex-col items-center md:items-start space-y-8 md:space-y-12 mr-20 ">
             {/* Step 3 */}
             {/* <div className="bg-purple-800 text-white rounded-md p-4  max-w-xs">
               <h3 className="text-lg font-bold mb-2">3</h3>
               <p className="text-sm font-semibold">Get Sponsored</p>
               <p className="text-xs mt-1">Partner with OohPoint for exclusive sponsorship benefits.</p>
             </div> */}
-             <div className="bg-purtle-700 text-white p-6 rounded-md  max-w-xs mx-auto">
+             <div className="bg-purtle-700 text-white p-6 rounded-md ">
       {/* Step Number Box */}
       <div className="  h-8 flex items-center justify-start w-full rounded-md mb-4 mx-auto">
-        <p className="text-sm font-bold bg-purtle-700 p-3 py-2 rounded-md ">3</p>
+        <p className="text-sm font-bold bg-purple-800 p-3 py-2 rounded-md ">3</p>
       </div>
 
       {/* Main Text */}
@@ -76,10 +76,10 @@ const HowItWorks = () => {
               <p className="text-sm font-semibold">Boost Event Impact</p>
               <p className="text-xs mt-1">Receive promotional materials, QR campaigns, and more.</p>
             </div> */}
-             <div className="bg-purtle-700 text-white p-6 rounded-md  max-w-xs mx-auto">
+             <div className="bg-purtle-700 text-white p-6 rounded-md  ">
       {/* Step Number Box */}
       <div className="  h-8 flex items-center justify-start w-full rounded-md mb-4 mx-auto">
-        <p className="text-sm font-bold bg-purtle-700 p-3 py-2 rounded-md ">3</p>
+        <p className="text-sm font-bold bg-purple-800 p-3 py-2 rounded-md ">4</p>
       </div>
 
       {/* Main Text */}
