@@ -32,7 +32,7 @@ import OurClient from './components/OurClient'
 import HowsItWork from './components/Steps'
 import Blog from './components/Blog'
 import Success from './components/Success'
-import FAQ from './components/FAQ'
+import Questions from './components/FAQ'
 import EventEngagement from './components/EventEngagement'
 import Campaign from './components/Campaign'
 
@@ -50,7 +50,7 @@ const Page = () => {
       </div>
       <Blog/>
       <Success/>
-      <FAQ/>
+      <Questions/>
       <EventEngagement/>
       </div>
     );
