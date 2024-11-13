@@ -32,7 +32,7 @@ import OurClient from './components/OurClient'
 import HowsItWork from './components/Steps'
 import Blog from './components/Blog'
 import Success from './components/Success'
-import Questions from './components/FAQ'
+import Questions from './components/Questions'
 import EventEngagement from './components/EventEngagement'
 import Campaign from './components/Campaign'
 
