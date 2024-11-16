@@ -1,11 +1,13 @@
 import React from 'react';
+import { FaAndroid, FaApple, FaSlack, FaGoogle, FaGitAlt } from "react-icons/fa";
+
 
 const PlantDiagnosis = () => {
   return (
     <div className="flex flex-col lg:flex-row items-center justify-between p-8 bg-white max-w-7xl mx-auto border">
       {/* Left Section - Text */}
       <div className="lg:w-1/2">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+        <h1 className="text-5xl leading-relaxed font-bold text-gray-900 mb-4">
           Get accurate plant diagnoses in an instant with Mizzle.
         </h1>
         <p className="text-gray-600 mb-6">
@@ -13,29 +15,32 @@ const PlantDiagnosis = () => {
         </p>
         <div className="flex space-x-4 mb-4">
           <a href="#!" className="inline-block">
-            <img src="path-to-google-play-image" alt="Download on Google Play" className="h-12"/>
+            <img src="./google play.png" alt="Download on Google Play" className=""/>
           </a>
           <a href="#!" className="inline-block">
-            <img src="path-to-app-store-image" alt="Download on App Store" className="h-12"/>
+            <img src="apple logo.png" alt="Download on App Store" className=""/>
           </a>
+         
         </div>
-        <p className="text-gray-500 text-sm mb-4">Global Partners:</p>
+        <div className='flex gap-10 items-center '>
+        <p className="  text-2xl font-semibold">Global Partners:</p>
         <div className="flex space-x-3">
-          <i className="fab fa-facebook fa-lg text-gray-500"></i>
-          <i className="fab fa-twitter fa-lg text-gray-500"></i>
-          <i className="fab fa-instagram fa-lg text-gray-500"></i>
-          <i className="fab fa-google fa-lg text-gray-500"></i>
-          <i className="fab fa-apple fa-lg text-gray-500"></i>
-        </div>
+        <div className=' rounded-full p-2 shadow-xl border'><FaAndroid /></div>
+        <div className=' rounded-full p-2 shadow-xl border'><FaApple /></div>
+        <div className=' rounded-full p-2 shadow-xl border'><FaSlack />         </div>
+       <div className=' rounded-full p-2 shadow-xl border'><FaGoogle />  </div>       
+        <div className=' rounded-full p-2 shadow-xl border'><FaGitAlt /> </div>      
+         </div>
+         </div>
+
       </div>
 
       {/* Right Section - Images */}
-      <div className="lg:w-1/2 flex justify-center mt-8 lg:mt-0 relative">
+      <div className="flex justify-center items-center">
         <img 
-          src="mobilephone.png" 
+          src="boyblog.png" 
           alt="Phone screen 1" 
-          className="w-40 md:w-56 lg:w-64 transform rotate-[-10deg]"
-          style={{ position: 'absolute', left: '30%', top: '-20%' }}
+          className="w-4/5 transform"
         />
         {/* <img 
           src="path-to-image2" 

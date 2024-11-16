@@ -13,7 +13,8 @@ const CampaignPage = () => {
              Home / India / Mumbai / Pawai / Meat&Fish Shops
             </div>
         </div>
-      <div className=" mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+      <div className=" mx-auto bg-white shadow-lg rounded-lg overflow-hidden flex gap-10">
+        <div>
         <div className="p-6 border-b border-gray-200">
           {/* Campaign Header */}
           <div className="flex items-start">
@@ -75,7 +76,7 @@ const CampaignPage = () => {
         </div>
 
         {/* Products Available */}
-        <div className="p-6">
+        <div className="p-6 py-16 bg-gray-50  ">
           <h3 className="text-lg font-bold text-gray-800">Products Available</h3>
           <div className="flex justify-between p-4">
             <div >
@@ -101,11 +102,12 @@ const CampaignPage = () => {
         </div>
 
         {/* Opening Hours */}
-        <div className="p-6">
+        <div className="flex justify-between">
+        <div className="p-6  ">
           <h3 className="text-lg font-bold text-gray-800">Opening Hours</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+          <div className="grid grid-cols-1 gap-4">
             {["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].map((day, index) => (
-              <div key={index} className="flex justify-between items-center text-gray-600">
+              <div key={index} className="flex justify-between items-center text-gray-600 gap-16">
                 <span>{day}</span>
                 <span>8:00 AM – 10:00 PM</span>
               </div>
@@ -114,21 +116,24 @@ const CampaignPage = () => {
         </div>
 
         {/* Types of Products */}
-        <div className="p-6">
+        <div className="p-6 flex  flex-col justify-center">
           <h3 className="text-lg font-bold text-gray-800">Types Of Products</h3>
           <div className="flex flex-wrap gap-2 mt-4">
             {["Earphones", "Headphones", "Mobile Cover", "Mobile Charger", "Data Cable"].map((item, index) => (
               <span
                 key={index}
-                className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium"
+                className="bg-blue-100 text-blue-600 px-3 py-2 rounded-md  text-sm font-medium"
               >
                 {item}
               </span>
             ))}
           </div>
         </div>
+        </div>
+        </div>
 
         {/* Additional Information */}
+        <div className="flex flex-col w-10/12 gap-20 items-center ">
         <div className="p-6 bg-green-100 text-green-700 rounded-lg mt-4">
           <p>Join Oohpoint Official WhatsApp Channel for Regular Updates and Discounts</p>
           <button className="mt-2 text-white bg-green-600 hover:bg-green-700 font-medium rounded-lg px-4 py-2">
@@ -145,6 +150,7 @@ const CampaignPage = () => {
           <button className="mt-4 text-white bg-purple-600 hover:bg-purple-700 font-medium rounded-lg px-4 py-2">
             Visit Now
           </button>
+        </div>
         </div>
       </div>
     </div>
