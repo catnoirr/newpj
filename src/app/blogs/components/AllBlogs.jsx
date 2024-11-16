@@ -1,8 +1,8 @@
-"use client"
-import React, { useState, useEffect } from 'react';
-import { db } from '../../../../firebaseConfig';
-import { collection, getDocs } from 'firebase/firestore';
-import { FiArrowUpRight, FiArrowLeft, FiArrowRight } from 'react-icons/fi';
+"use client";
+import React, { useState, useEffect } from "react";
+import { db } from "../../../../firebaseConfig";
+import { collection, getDocs } from "firebase/firestore";
+import { FiArrowUpRight, FiArrowLeft, FiArrowRight } from "react-icons/fi";
 
 function BlogPostsGrid() {
   const [blogPosts, setBlogPosts] = useState([]);
@@ -11,14 +11,14 @@ function BlogPostsGrid() {
 
   useEffect(() => {
     const fetchBlogPosts = async () => {
-      const blogCollection = collection(db, 'blogs');
+      const blogCollection = collection(db, "blogs");
       const blogSnapshot = await getDocs(blogCollection);
-      const blogs = blogSnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
+      const blogs = blogSnapshot.docs.map((doc) => ({
+        id: doc.id, // Firebase document ID
+        ...doc.data(),
       }));
 
-      // Sort blogs by date in descending order (latest first)
+      // Sort blogs by date in descending order
       blogs.sort((a, b) => new Date(b.date) - new Date(a.date));
 
       setBlogPosts(blogs);
@@ -48,9 +48,7 @@ function BlogPostsGrid() {
         {currentPosts.map((post) => (
           <a
             key={post.id}
-            href={post.blogUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`/blogs/${post.id}`} // Dynamic route using Firebase document ID
             className="overflow-hidden hover:shadow-md transition-shadow duration-200"
           >
             <img
@@ -60,18 +58,25 @@ function BlogPostsGrid() {
             />
 
             <div className="p-6 relative">
-              <p className="text-sm text-blue-600 font-semibold mb-1">{post.author} • {post.date}</p>
+              <p className="text-sm text-blue-600 font-semibold mb-1">
+                {post.author} • {post.date}
+              </p>
 
               <h3 className="text-lg font-bold text-gray-800 flex justify-between items-center mb-2">
                 {post.title}
-                <FiArrowUpRight className="w-5 h-5 transform rotate-45" />
+                <FiArrowUpRight className="w-5 h-5 transform" />
               </h3>
 
               <p className="text-gray-600 mb-4">{post.description}</p>
 
               <div className="flex space-x-2">
                 {post.tags.map((tag) => (
-                  <span key={tag} className="text-sm text-blue-600 bg-blue-100 hover:bg-beige-400 px-3 py-1 rounded-full">{tag}</span>
+                  <span
+                    key={tag}
+                    className="text-sm text-blue-600 bg-blue-100 hover:bg-beige-400 px-3 py-1 rounded-full"
+                  >
+                    {tag}
+                  </span>
                 ))}
               </div>
             </div>
@@ -95,7 +100,11 @@ function BlogPostsGrid() {
             <button
               key={index + 1}
               onClick={() => handlePageChange(index + 1)}
-              className={`px-3 py-1 text-gray-700 rounded ${currentPage === index + 1 ? ' text-purple-700' : 'hover:bg-gray-200'}`}
+              className={`px-3 py-1 text-gray-700 rounded ${
+                currentPage === index + 1
+                  ? "text-purple-700"
+                  : "hover:bg-gray-200"
+              }`}
             >
               {index + 1}
             </button>
