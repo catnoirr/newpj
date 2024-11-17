@@ -13,12 +13,22 @@ function BlogPostsGrid() {
     const fetchBlogPosts = async () => {
       const blogCollection = collection(db, "blogs");
       const blogSnapshot = await getDocs(blogCollection);
-      const blogs = blogSnapshot.docs.map((doc) => ({
-        id: doc.id, // Firebase document ID
-        ...doc.data(),
-      }));
+      const blogs = blogSnapshot.docs.map((doc) => {
+        const data = doc.data();
 
-      // Sort blogs by date in descending order
+        // Extracting the `createdAt` and `seo.seoauthor` fields
+        return {
+          id: doc.id,
+          title: data.title,
+          description: data.description,
+          image: data.image,
+          tags: data.tags || [],
+          date: data.createdAt ? new Date(data.createdAt.seconds * 1000).toLocaleDateString() : "Unknown Date", // Convert Firestore Timestamp
+          author: data.seo?.seoauthor || "Unknown Author", // Get author from `seo.seoauthor`
+        };
+      });
+
+      // Sort blogs by `createdAt` in descending order
       blogs.sort((a, b) => new Date(b.date) - new Date(a.date));
 
       setBlogPosts(blogs);
@@ -27,17 +37,20 @@ function BlogPostsGrid() {
     fetchBlogPosts();
   }, []);
 
-  // Calculate total pages
   const totalPages = Math.ceil(blogPosts.length / postsPerPage);
-
-  // Get current page's blog posts
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = blogPosts.slice(indexOfFirstPost, indexOfLastPost);
 
-  // Handle page change
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
+  };
+
+  // Function to truncate description to first sentence
+  const truncateDescription = (description) => {
+    if (!description) return "";
+    const firstSentence = description.split(".")[0]; // Split by first period
+    return firstSentence.endsWith(".") ? firstSentence : `${firstSentence}.`; // Ensure it ends with a period
   };
 
   return (
@@ -48,11 +61,11 @@ function BlogPostsGrid() {
         {currentPosts.map((post) => (
           <a
             key={post.id}
-            href={`/blogs/${post.id}`} // Dynamic route using Firebase document ID
+            href={`/blogs/${post.id}`}
             className="overflow-hidden hover:shadow-md transition-shadow duration-200"
           >
             <img
-              src={post.imageUrl}
+              src={post.image}
               alt={post.title}
               className="w-full h-60 object-cover"
             />
@@ -67,7 +80,7 @@ function BlogPostsGrid() {
                 <FiArrowUpRight className="w-5 h-5 transform" />
               </h3>
 
-              <p className="text-gray-600 mb-4">{post.description}</p>
+              <p className="text-gray-600 mb-4">{truncateDescription(post.description)}</p>
 
               <div className="flex space-x-2">
                 {post.tags.map((tag) => (
