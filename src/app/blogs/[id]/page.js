@@ -83,14 +83,14 @@ const BlogDetails = () => {
           <img
             src={blog.image}
             alt={blog.title}
-            className="w-full h-[600px] object-cover rounded-2xl shadow-xl"
+            className="w-full md:h-[600px] object-cover rounded-2xl shadow-xl"
           />
         </div>
       )}
 
       {/* Blog Description using dangerouslySetInnerHTML */}
       {blog.editorDescription && (
-        <div className="text-lg text-gray-700 mb-10  p-12 ">
+        <div className="text-lg text-gray-700 mb-10  md:p-12 p-6 ">
           <strong className="block mb-2 text-xl font-semibold text-gray-800"></strong>
           <div dangerouslySetInnerHTML={{ __html: blog.editorDescription }} />
         </div>
