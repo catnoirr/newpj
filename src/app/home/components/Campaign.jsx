@@ -17,6 +17,12 @@ const Campaigns = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // Separate pagination states for Ongoing and Upcoming campaigns
+  const [currentPageOngoing, setCurrentPageOngoing] = useState(1);
+  const [currentPageUpcoming, setCurrentPageUpcoming] = useState(1);
+
+  const itemsPerPage = 3; // Show 3 campaigns per page
+
   // Fetch campaigns data from Firestore
   useEffect(() => {
     const fetchCampaigns = async () => {
@@ -98,6 +104,44 @@ const Campaigns = () => {
   // Get current date for filtering campaigns
   const currentDate = new Date();
 
+  // Filter Ongoing and Upcoming campaigns
+  const ongoingCampaigns = campaigns.filter((campaign) => campaign.startDate && campaign.startDate <= currentDate);
+  const upcomingCampaigns = campaigns.filter((campaign) => campaign.startDate && campaign.startDate > currentDate);
+
+  // Handle Pagination Logic for Ongoing Campaigns
+  const indexOfLastOngoing = currentPageOngoing * itemsPerPage;
+  const indexOfFirstOngoing = indexOfLastOngoing - itemsPerPage;
+  const currentOngoingCampaigns = ongoingCampaigns.slice(indexOfFirstOngoing, indexOfLastOngoing);
+
+  const nextPageOngoing = () => {
+    if (indexOfLastOngoing < ongoingCampaigns.length) {
+      setCurrentPageOngoing(currentPageOngoing + 1);
+    }
+  };
+
+  const prevPageOngoing = () => {
+    if (indexOfFirstOngoing > 0) {
+      setCurrentPageOngoing(currentPageOngoing - 1);
+    }
+  };
+
+  // Handle Pagination Logic for Upcoming Campaigns
+  const indexOfLastUpcoming = currentPageUpcoming * itemsPerPage;
+  const indexOfFirstUpcoming = indexOfLastUpcoming - itemsPerPage;
+  const currentUpcomingCampaigns = upcomingCampaigns.slice(indexOfFirstUpcoming, indexOfLastUpcoming);
+
+  const nextPageUpcoming = () => {
+    if (indexOfLastUpcoming < upcomingCampaigns.length) {
+      setCurrentPageUpcoming(currentPageUpcoming + 1);
+    }
+  };
+
+  const prevPageUpcoming = () => {
+    if (indexOfFirstUpcoming > 0) {
+      setCurrentPageUpcoming(currentPageUpcoming - 1);
+    }
+  };
+
   if (loading) return <div>Loading campaigns...</div>;
   if (error) return <div>{error}</div>;
 
@@ -110,24 +154,46 @@ const Campaigns = () => {
           View All
         </button>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-16">
-          {campaigns
-            .filter((campaign) => campaign.startDate && campaign.startDate <= currentDate)
-            .map((campaign) => (
-              <CampaignCard key={campaign.id} campaign={campaign} />
-            ))}
+          {currentOngoingCampaigns.map((campaign) => (
+            <CampaignCard key={campaign.id} campaign={campaign} />
+          ))}
         </div>
+
+        {/* Pagination Controls */}
+        {ongoingCampaigns.length > itemsPerPage && (
+          <div className="flex justify-between mt-4">
+            <button onClick={prevPageOngoing} disabled={currentPageOngoing === 1} className="text-white bg-blue-600 py-2 px-4 rounded">
+              Previous
+            </button>
+            <span>Page {currentPageOngoing}</span>
+            <button onClick={nextPageOngoing} disabled={indexOfLastOngoing >= ongoingCampaigns.length} className="text-white bg-blue-600 py-2 px-4 rounded">
+              Next
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Upcoming Campaigns */}
       <div className="relative">
         <h2 className="text-xl font-bold mb-4">Upcoming Campaigns</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-16">
-          {campaigns
-            .filter((campaign) => campaign.startDate && campaign.startDate > currentDate)
-            .map((campaign) => (
-              <CampaignCard key={campaign.id} campaign={campaign} />
-            ))}
+          {currentUpcomingCampaigns.map((campaign) => (
+            <CampaignCard key={campaign.id} campaign={campaign} />
+          ))}
         </div>
+
+        {/* Pagination Controls */}
+        {upcomingCampaigns.length > itemsPerPage && (
+          <div className="flex justify-between mt-4">
+            <button onClick={prevPageUpcoming} disabled={currentPageUpcoming === 1} className="text-white bg-blue-600 py-2 px-4 rounded">
+              Previous
+            </button>
+            <span>Page {currentPageUpcoming}</span>
+            <button onClick={nextPageUpcoming} disabled={indexOfLastUpcoming >= upcomingCampaigns.length} className="text-white bg-blue-600 py-2 px-4 rounded">
+              Next
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -135,8 +201,6 @@ const Campaigns = () => {
 
 // Component to render individual campaign cards
 const CampaignCard = ({ campaign }) => {
-  console.log("End Date in card:", campaign.endDate);  // Debugging to see the end date
-
   return (
     <div className="border rounded-lg shadow-lg overflow-hidden relative">
       <img src={campaign.img} alt={campaign.title} className="w-full h-60 object-cover" />
