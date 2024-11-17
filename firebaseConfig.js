@@ -1,6 +1,6 @@
 // firebaseConfig.js
 import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore , doc, getDoc, collection, getDocs } from 'firebase/firestore';
 import { getStorage } from "firebase/storage";
 
 // const firebaseConfig = {
@@ -26,4 +26,4 @@ const db = getFirestore(app);
 const storage = getStorage(app);
 
 
-export { db ,  storage };
+export { db ,  storage, doc, getDoc, collection, getDocs };
