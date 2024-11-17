@@ -8,7 +8,7 @@ import { db } from "../../../../firebaseConfig";
 import { doc, getDoc } from "firebase/firestore";
 
 // Vendor Detail Component
-
+//ready to push
 
 const CampaignPage = () => {
   const { id } = useParams();
