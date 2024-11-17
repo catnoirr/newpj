@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { db } from "../../../../firebaseConfig";
-import { collection, getDocs, query, where, orderBy } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { FiArrowUpRight, FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { useRouter } from "next/navigation"; // Import useRouter for programmatic navigation
 
@@ -14,30 +14,30 @@ function BlogPostsGrid() {
   useEffect(() => {
     const fetchBlogPosts = async () => {
       try {
-        // Updated query to only fetch blogs where isCaseStudy is false
         const blogCollection = collection(db, "blogs");
-        const blogsQuery = query(
-          blogCollection,
-          where("isCaseStudy", "==", false),
-          orderBy("createdAt", "desc") // Sort by createdAt in descending order
-        );
-        const blogSnapshot = await getDocs(blogsQuery);
-        const blogs = blogSnapshot.docs.map((doc) => {
-          const data = doc.data();
+        const blogSnapshot = await getDocs(blogCollection);
+        const blogs = blogSnapshot.docs
+          .map((doc) => {
+            const data = doc.data();
 
-          // Extracting the `createdAt` and `seo.seoauthor` fields
-          return {
-            id: doc.id,
-            title: data.title,
-            description: data.description,
-            image: data.image,
-            tags: data.tags || [],
-            date: data.createdAt
-              ? new Date(data.createdAt.seconds * 1000).toLocaleDateString()
-              : "Unknown Date", // Convert Firestore Timestamp
-            author: data.seo?.seoauthor || "Unknown Author", // Get author from `seo.seoauthor`
-          };
-        });
+            // Extracting the fields from Firestore documents
+            return {
+              id: doc.id,
+              title: data.title,
+              description: data.description,
+              image: data.image,
+              tags: data.tags || [],
+              isCaseStudy: data.isCaseStudy || false, // Check if it's a case study
+              date: data.createdAt
+                ? new Date(data.createdAt.seconds * 1000).toLocaleDateString()
+                : "Unknown Date", // Convert Firestore Timestamp to date
+              author: data.seo?.seoauthor || "Unknown Author", // Get author from `seo.seoauthor`
+            };
+          })
+          .filter((blog) => blog.isCaseStudy); // Filter only case studies
+
+        // Sort blogs by `createdAt` in descending order
+        blogs.sort((a, b) => new Date(b.date) - new Date(a.date));
 
         setBlogPosts(blogs);
       } catch (error) {
@@ -60,23 +60,23 @@ function BlogPostsGrid() {
   // Function to truncate description to the first sentence
   const truncateDescription = (description) => {
     if (!description) return "";
-    const firstSentence = description.split(".")[0]; // Split by first period
-    return firstSentence.endsWith(".") ? firstSentence : `${firstSentence}.`; // Ensure it ends with a period
+    const firstSentence = description.split(".")[0];
+    return firstSentence.endsWith(".") ? firstSentence : `${firstSentence}.`;
   };
 
   const handlePostClick = (id) => {
-    router.push(`/blogs/${id}`); // Programmatically navigate to the blog post details page
+    router.push(`/casestudy/${id}`); // Navigate to the blog post details page
   };
 
   return (
     <section className="p-8 bg-white">
-      <h2 className="text-3xl font-semibold text-gray-800 mb-6">All Blog Posts</h2>
+      <h2 className="text-3xl font-semibold text-gray-800 mb-6">All Case Studies</h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {currentPosts.map((post) => (
           <div
             key={post.id}
-            onClick={() => handlePostClick(post.id)} // Trigger navigation on click
+            onClick={() => handlePostClick(post.id)}
             className="overflow-hidden hover:shadow-md transition-shadow duration-200 cursor-pointer"
           >
             <img
@@ -103,7 +103,7 @@ function BlogPostsGrid() {
                 {post.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-sm text-blue-600 bg-blue-100 hover:bg-beige-400 px-3 py-1 rounded-full"
+                    className="text-sm text-blue-600 bg-blue-100 hover:bg-blue-200 px-3 py-1 rounded-full"
                   >
                     {tag}
                   </span>
@@ -131,7 +131,9 @@ function BlogPostsGrid() {
               key={index + 1}
               onClick={() => handlePageChange(index + 1)}
               className={`px-3 py-1 text-gray-700 rounded ${
-                currentPage === index + 1 ? "text-purple-700" : "hover:bg-gray-200"
+                currentPage === index + 1
+                  ? "bg-purple-200 text-purple-700"
+                  : "hover:bg-gray-200"
               }`}
             >
               {index + 1}

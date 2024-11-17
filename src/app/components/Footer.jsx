@@ -45,7 +45,7 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-4">Brand Login</h3>
           <ul className="text-gray-400 space-y-2">
             <li>
-              <button onClick={() => handleNavigation('/case-study')} className="hover:text-white">
+              <button onClick={() => handleNavigation('/casestudy')} className="hover:text-white">
                 Case Study
               </button>
             </li>
