@@ -71,7 +71,7 @@ const BlogDetails = () => {
       </h1>
 
       {/* Metadata */}
-      <div className="flex justify-center items-center text-sm text-gray-500 mb-10 space-x-2">
+      <div className="flex  text-sm text-gray-500 mb-10 space-x-2">
         <span className="font-semibold">{blog.author}</span>
         <span>•</span>
         <span>{blog.createdAt}</span>
