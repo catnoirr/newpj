@@ -3,7 +3,7 @@ import {FaArrowLeft,FaShareAlt} from 'react-icons/fa'
 
 const CampaignPage = () => {
   return (
-    <div className="bg-gray-100 min-h-screen p-6">
+    <div className="bg-gray-100 min-h-screen p-2">
         <div>
             <div className="flex items-center gap-4 ">
                <button><FaArrowLeft className="text-xl"/></button>
@@ -13,7 +13,7 @@ const CampaignPage = () => {
              Home / India / Mumbai / Pawai / Meat&Fish Shops
             </div>
         </div>
-      <div className=" mx-auto bg-white shadow-lg rounded-lg overflow-hidden flex gap-10">
+      <div className=" mx-auto bg-white shadow-lg rounded-lg  flex gap-10 flex-col md:flex-row">
         <div>
         <div className="p-6 border-b border-gray-200">
           {/* Campaign Header */}
@@ -22,7 +22,7 @@ const CampaignPage = () => {
             <div className="flex justify-between">
                 <div className="flex gap-3">
                     <div className=" rounded-3xl">
-                        <img src="./cafelogo.png" alt=""  className="w-20 h-20 bg-beige-400 rounded-2xl"/>
+                        <img src="../cafelogo.png" alt=""  className="w-20 h-20 bg-beige-400 rounded-2xl"/>
                         </div>
 
               <div>
@@ -65,7 +65,7 @@ const CampaignPage = () => {
         </div>
 
         {/* Navigation Tabs */}
-        <div className="p-6 bg-blue-600  space-x-4 text-white flex justify-between">
+        <div className="p-6 bg-blue-600  space-x-4 text-white flex justify-between flex-col md:flex-row">
             <div className="">
           <button className="px-4 py-2 font-medium">Overview</button>
           <button className="px-4 py-2 font-medium">Offers</button>
@@ -78,31 +78,31 @@ const CampaignPage = () => {
         {/* Products Available */}
         <div className="p-6 py-16 bg-gray-50  ">
           <h3 className="text-lg font-bold text-gray-800">Products Available</h3>
-          <div className="flex justify-between p-4">
+          <div className="flex justify-between p-4  md:flex-row items-center gap-2">
             <div >
-                <img src="./coffe.png" alt="coffeelogo" className="p-6 rounded-full products" />
+                <img src="../coffe.png" alt="coffeelogo" className="p-3 md:p-3 rounded-full products w-12 h-12 md:w-16 md:h-16" />
             </div>
             <div>
-                <img src="./pastries.png" alt="pastries logo" className="p-6 rounded-full products" />
+                <img src="../pastries.png" alt="pastries logo" className="p-3 rounded-full products  w-12 h-12 md:w-16 md:h-16" />
             </div>
             <di>
-                <img src="./sandwitches.png" alt="sandwitches logo" className="p-3 px-4 rounded-full products" />
+                <img src="../sandwitches.png" alt="sandwitches logo" className="p-3 px-4 rounded-full products  w-12 h-12 md:w-16 md:h-16" />
             </di>
             <div>
-                <img src="./coffe.png" alt="coffeelogo" className="p-6 rounded-full products" />
+                <img src="../coffe.png" alt="coffeelogo" className="p-3 rounded-full products  w-12 h-12 md:w-16 md:h-16" />
             </div>
             <div>
-                <img src="./pastries.png" alt="pastries logo" className="p-6 rounded-full products" />
+                <img src="../pastries.png" alt="pastries logo" className="p-3 rounded-full products  w-12 h-12 md:w-16 md:h-16" />
             </div>
             <div>
-                <img src="./sandwitches.png" alt="sandwitches logo"  className="p-3 px-4 rounded-full products"/>
+                <img src="../sandwitches.png" alt="sandwitches logo"  className="p-3 px-4 rounded-full products  w-12 h-12 md:w-16 md:h-16"/>
             </div>
            
           </div>
         </div>
 
         {/* Opening Hours */}
-        <div className="flex justify-between">
+        <div className="flex justify-between flex-col md:flex-row">
         <div className="p-6  ">
           <h3 className="text-lg font-bold text-gray-800">Opening Hours</h3>
           <div className="grid grid-cols-1 gap-4">
@@ -133,7 +133,7 @@ const CampaignPage = () => {
         </div>
 
         {/* Additional Information */}
-        <div className="flex flex-col w-10/12 gap-20 items-center ">
+        <div className="flex flex-col md:w-10/12 gap-20 items-center ">
         <div className="p-6 bg-green-100 text-green-700 rounded-lg mt-4">
           <p>Join Oohpoint Official WhatsApp Channel for Regular Updates and Discounts</p>
           <button className="mt-2 text-white bg-green-600 hover:bg-green-700 font-medium rounded-lg px-4 py-2">
