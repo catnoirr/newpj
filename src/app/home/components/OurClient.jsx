@@ -19,7 +19,7 @@ const FeaturedLogos = () => {
         {/* Logo 5 */}
         <img src="./Logo5.png" alt="Logo 5" className="md:w-16 md:h-16 w-10 h-10" />
         {/* Logo 6 */}
-        <img src="./Logo6.png" alt="Logo 5" className="md:w-16 md:h-16 w-10 h-10" />
+        {/* <img src="./Logo6.png" alt="Logo 5" className="md:w-16 md:h-16 w-10 h-10" /> */}
         {/* Logo 7 */}
         <img src="./Logo3.png" alt="Logo 5" className="md:w-16 md:h-16 w-10 h-10" />
       </div>

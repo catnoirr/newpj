@@ -3,17 +3,17 @@ import { FaCheck } from 'react-icons/fa';
 
 const CampusImpact = () => {
   return (
-    <div className="flex flex-col items-center bg-gray-100 min-h-screen p-4 md:p-8">
+    <div className="flex flex-col items-center bg-white min-h-screen p-4 md:p-8">
       {/* Main container with left and right content */}
       <div className="flex flex-col lg:flex-row items-start w-full max-w-7xl p-4 md:p-8 rounded-lg space-y-8 lg:space-y-0 lg:space-x-8">
         
         {/* Left content */}
         <div className="lg:w-1/2">
           <div className="w-full ">
-            <h1 className="text-4xl md:text-4xl lg:text-5xl font-semibold text-purtle-700 mb-4">
+            <h1 className="text-4xl md:text-4xl lg:text-5xl font-semibold text-black mb-4">
               Our Commitment to Campus Impact
             </h1>
-            <p className="text-purtle-500 mb-6 text-base md:text-lg">
+            <p className="text-black mb-6 text-base md:text-lg">
               Be a leader, grow your network, and shape the future of advertising on your campus! Be a leader, grow your network, and shape the future of advertising on your campus!
             </p>
           </div>
@@ -22,6 +22,9 @@ const CampusImpact = () => {
           <div className="bg-gray-200 p-4 md:p-6 sm:h-[490]">
             <button className="bg-purtle-700 text-white py-2 px-4 md:py-4 md:px-8 rounded-xl hover:bg-purtle-500 mb-4 ml-8">
               Our Mission
+            </button>
+            <button className=" text-blue-600 py-2 px-4 md:py-4 md:px-8 rounded-xl  mb-4 ml-8 hover:border hover:border-blue-600">
+              Our Vision
             </button>
 
             <p className="text-purtle-500 mb-4 text-sm md:text-base">
@@ -54,7 +57,7 @@ const CampusImpact = () => {
         {/* Right content - Image with overlay */}
         <div className="lg:w-1/2 relative flex justify-center">
           <img
-            src="campusimpact.png" // replace with the actual path to your image
+            src="biy.png" // replace with the actual path to your image
             alt="Laptop with notebook"
             className="w-full h-auto md:w-[500px] lg:w-[666px] object-cover "
           />

@@ -26,8 +26,8 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className='bg-white flex justify-center align-middle md:px-14 px-8 '>
-      <div className='bg-white py-12 shadow-lg'>
+    <section className='bg-white flex justify-center align-middle md:px-14 px-8  mt-5'>
+      <div className='bg-white py-12'>
       <div className="text-center mb-8">
         <h2 className="text-5xl font-bold">
           How it works in <span className="text-green-600">4 easy steps</span>

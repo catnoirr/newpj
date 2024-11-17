@@ -78,18 +78,14 @@ const Testimonials = () => {
         </div>
 
         {/* Right Content - Image Section */}
-        <div className="md:w-1/2 flex justify-center items-center bg-gray-100 relative m-16">
+        <div className="md:w-1/2 flex justify-center items-center  relative m-16">
           <div className="relative max-w-md">
             {/* Dots decoration behind the main image */}
-            <img
-              src="dot2.png"
-              alt="Decorative dots"
-              className="absolute -top-20 -right-16 sm:-top-40 sm:-right-20  w-32 sm:w-56 z-10"
-            />
+            
 
             {/* Main Image */}
             <Image
-              src="/Rectangle 4396.png" // Replace with actual path
+              src="/ranveer.png" // Replace with actual path
               width={600}
               height={400}
               alt="Laptop and plant on table"
@@ -97,7 +93,7 @@ const Testimonials = () => {
             />
 
             {/* Top Card - Meeting With */}
-            <div className="absolute -top-5 -left-20 sm:right-40 right-24 bg-purple-900 text-white p-3 rounded-lg shadow-lg flex items-center space-x-2 z-20">
+            <div className="absolute -top-5 -left-20 sm:right-40 right-24 r-cards text-white p-3 rounded-lg shadow-lg flex items-center space-x-2 z-20">
             <div className="flex -space-x-2">
                 <img
                   src="/user1.jpeg" // Replace with actual path
@@ -111,7 +107,7 @@ const Testimonials = () => {
             </div>
 
             {/* Bottom Card - Customer Satisfaction */}
-            <div className="absolute bottom-3 -left-20 bg-purple-900 text-white p-3 rounded-lg shadow-lg   flex items-center space-x-2 z-20">
+            <div className="absolute bottom-3 -left-20 bg-purple-900 text-white p-3 rounded-lg shadow-lg   flex items-center space-x-2 z-20 r-cards">
             
               <span className="text-xs sm:text-sm font-semibold">Excelent Work</span>
               <div className="flex -space-x-2">

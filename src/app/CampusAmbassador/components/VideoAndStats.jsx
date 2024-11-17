@@ -2,10 +2,14 @@ import React from 'react';
 
 const VideoAndStats = () => {
   return (
-    <section className="bg-gray-100 py-12 ">
+    <section className="bg-white py-12 ">
       {/* Video Section */}
-      <div className="w-full  mx-auto bg-gray-200 h-96 flex items-center justify-center mb-8">
-        <p className="text-2xl text-purple-600">video</p>
+      <div className="w-full  mx-auto bg-white gap-16 flex justify-around items-center mb-8 videos md:flex-row flex-col">
+        <video src="#"></video>
+        <video src="#"></video>
+        <video src="#"></video>
+        <video src="#"></video>
+
       </div>
 
       {/* Statistics Section */}

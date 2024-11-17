@@ -4,11 +4,11 @@ import { FaCheck } from 'react-icons/fa';
 
 const RoleAndResponsibilities = () => {
   return (
-    <section className="md:px-14 px-8 py-8 bg-gray-100 ">
-      <div className=" mb-4">
+    <section className="md:px-14 px-8 py-8 bg-white  ">
+      {/* <div className=" mb-4">
         <h2 className="text-5xl font-semibold text-purtle-700">Role & Responsibilities</h2>
-      </div>
-      <div className="flex flex-col md:flex-row items-center bg-white p-6 ">
+      </div> */}
+      <div className="flex flex-col md:flex-row items-center bg-white p-6 shadow-lg">
         <div className="flex-1">
           <img
             src="screenshot1.png"

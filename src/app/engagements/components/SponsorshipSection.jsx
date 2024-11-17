@@ -3,20 +3,27 @@ import { FaUserGraduate, FaChessRook, FaBullseye, FaUsers, FaTheaterMasks } from
 
 const SponsorshipSection = () => {
   return (
-    <section className="bg-gray-50 py-12 px-6">
-      <div className="max-w-4xl mx-auto text-center">
+    <section className="bg-white py-12 px-6">
+      <div className=" text-center">
         <h2 className="text-3xl font-bold text-gray-900 mb-6">We are Sponsoring</h2>
-        <p className="text-gray-600 mb-12">
+         <div className='flex gap-20 flex-col md:flex-row'> 
+         <div>
+          
+        <p className="text-gray-600 mb-12 text-left">
           We believe that the best way to create successful marketing campaigns is to work closely with our clients to understand their goals and challenges.
         </p>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* <div className="grid md:grid-cols-2 gap-8"> */}
           {/* Left Side - Sponsorship Image */}
-          <div className="flex justify-center items-center">
-            <img src="spomsor.png" alt="Sponsorship" className="rounded-lg shadow-md" />
+          <div className="flex justify-center items-center h-72">
+            <img src="spomsor.png" alt="Sponsorship" className="rounded-lg shadow-md object-cover h-full w-full " />
+          </div>
           </div>
 
+         
+
           {/* Right Side - Sponsorship Details */}
+          <div className='w-full p-3 shadow-lg'>
           <div className="space-y-6 text-left">
             {/* College Fest */}
             <div className="flex items-start space-x-4">
@@ -72,7 +79,11 @@ const SponsorshipSection = () => {
                 <p className="text-gray-600">Conduct yourself with integrity and honesty.</p>
               </div>
             </div>
+
           </div>
+          </div>
+          {/* </div> */}
+
         </div>
       </div>
     </section>

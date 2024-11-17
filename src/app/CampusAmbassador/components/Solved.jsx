@@ -15,7 +15,6 @@ const Testimonials = () => {
         
         {/* Left Content - Testimonials Carousel */}
         <div className="md:w-1/2">
-          <p className="text-sm text-purtle-400 font-semibold mb-2">Testimonials & Reviews</p>
           <h2 className="text-3xl font-bold text-gray-900 mb-4">See how we've helped our clients succeed</h2>
           <p className="text-gray-600 mb-8">More than 1500+ agencies using Ooh Point</p>
 
@@ -30,9 +29,9 @@ const Testimonials = () => {
             {[1, 2, 3].map((slideIndex) => (
               <SwiperSlide key={slideIndex}>
                 {/* Grid with 2 Testimonial Cards */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 p-8">
                   {/* Testimonial Card 1 */}
-                  <div className=" p-6 rounded-lg  flex flex-col">
+                  <div className=" p-6 rounded-lg  flex flex-col bg-oohpoint-grey-200">
                     <div className="flex items-center mb-4">
                       <FaQuoteLeft className="text-purtle-400 text-2xl mr-2" />
                       <div className="flex space-x-1">
@@ -53,7 +52,7 @@ const Testimonials = () => {
                   </div>
 
                   {/* Testimonial Card 2 */}
-                  <div className=" p-6 rounded-lg  flex flex-col">
+                  <div className=" p-6 rounded-lg  flex flex-col bg-oohpoint-grey-200">
                     <div className="flex items-center mb-4">
                       <FaQuoteLeft className="text-purtle-400 text-2xl mr-2" />
                       <div className="flex space-x-1">

@@ -41,7 +41,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center bg-gray-100 min-h-screen p-8">
+    <div className="flex flex-col items-center bg-white min-h-screen p-8">
       <h1 className="text-3xl font-semibold text-gray-900 mb-8">
         Our Comprehensive Services
       </h1>

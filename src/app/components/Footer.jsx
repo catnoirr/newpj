@@ -8,7 +8,7 @@ const Footer = () => {
         {/* Logo and Description */}
         <div className="flex flex-col">
           <div className="flex items-center space-x-2">
-            <img src="image.png" alt="Oohpoint Logo" className="w-16 h-12" /> {/* Replace with the actual logo source */}
+            <img src="logo.png" alt="Oohpoint Logo" className="w-16 h-12" /> {/* Replace with the actual logo source */}
           </div>
           <p className="text-gray-400 mt-4">
             We help brands achieve impactful and data-driven advertising campaigns.

@@ -47,7 +47,7 @@ export default function Sidebar() {
       >
         {/* Logo and Expand/Collapse Button */}
         <div className="relative flex items-center justify-center p-4">
-          <img src="/image.png" alt="Logo" className="p-1" />
+          <img src="/logo.png" alt="Logo" className="p-1" />
           {/* Expand/Collapse Button with responsive positioning */}
           <button
             onClick={() => setIsExpanded(!isExpanded)}
