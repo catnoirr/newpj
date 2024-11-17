@@ -3,11 +3,13 @@ import React, { useState, useEffect } from "react";
 import { db } from "../../../../firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
 import { FiArrowUpRight, FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import { useRouter } from "next/navigation"; // Import useRouter for programmatic navigation
 
 function BlogPostsGrid() {
   const [blogPosts, setBlogPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 6;
+  const router = useRouter(); // Instantiate useRouter
 
   useEffect(() => {
     const fetchBlogPosts = async () => {
@@ -53,16 +55,20 @@ function BlogPostsGrid() {
     return firstSentence.endsWith(".") ? firstSentence : `${firstSentence}.`; // Ensure it ends with a period
   };
 
+  const handlePostClick = (id) => {
+    router.push(`/blogs/${id}`); // Programmatically navigate to the blog post details page
+  };
+
   return (
     <section className="p-8 bg-white">
       <h2 className="text-3xl font-semibold text-gray-800 mb-6">All blog posts</h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {currentPosts.map((post) => (
-          <a
+          <div
             key={post.id}
-            href={`/blogs/${post.id}`}
-            className="overflow-hidden hover:shadow-md transition-shadow duration-200"
+            onClick={() => handlePostClick(post.id)} // Trigger navigation on click
+            className="overflow-hidden hover:shadow-md transition-shadow duration-200 cursor-pointer"
           >
             <img
               src={post.image}
@@ -93,7 +99,7 @@ function BlogPostsGrid() {
                 ))}
               </div>
             </div>
-          </a>
+          </div>
         ))}
       </div>
 
