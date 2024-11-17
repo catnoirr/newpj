@@ -2,15 +2,16 @@
 import React, { useEffect, useState } from 'react';
 import { FaShare, FaPaperPlane } from 'react-icons/fa';
 import { db } from '../../../../firebaseConfig'; // Ensure correct Firebase configuration
-import { collection, getDocs, getDoc, doc } from 'firebase/firestore';
+import { collection, getDocs, getDoc} from 'firebase/firestore';
+import Link from 'next/link';
 
 // Helper function to safely format Firebase Timestamp to a readable date string
-const formatDate = (timestamp) => {
-  if (timestamp && timestamp.toDate && typeof timestamp.toDate === 'function') {
-    return new Date(timestamp.toDate()).toLocaleDateString();
-  }
-  return 'N/A'; // Return a fallback string if there's no valid timestamp
-};
+// const formatDate = (timestamp) => {
+//   if (timestamp && timestamp.toDate && typeof timestamp.toDate === 'function') {
+//     return new Date(timestamp.toDate()).toLocaleDateString();
+//   }
+//   return 'N/A'; // Return a fallback string if there's no valid timestamp
+// };
 
 const Campaigns = () => {
   const [campaigns, setCampaigns] = useState([]);
@@ -231,9 +232,11 @@ const CampaignCard = ({ campaign }) => {
 
         {/* View Offers Button with Share (Plane) Icon */}
         <div className="flex items-center justify-between mt-4 gap-5">
-          <button className="w-full bg-blue-600 text-white py-4 rounded-xl transition">
-            View Offers
-          </button>
+        <Link href={`/campaigns/${campaign.id}`}>
+            <button className="w-full bg-blue-600 text-white py-4 px-10 rounded-xl transition">
+              View Offers
+            </button>
+          </Link>
           <button className="ml-2 text-white bg-blue-600 rounded-full p-3">
             <FaPaperPlane />
           </button>
