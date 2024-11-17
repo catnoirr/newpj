@@ -8,19 +8,7 @@ import { db } from "../../../../firebaseConfig";
 import { doc, getDoc } from "firebase/firestore";
 
 // Vendor Detail Component
-const VendorDetail = ({ vendor }) => (
-  <div className="flex gap-4">
-    <span className="font-semibold">{vendor.vendorId}</span>
-    <div>
-      <p><strong>Business Name:</strong> {vendor.businessName}</p>
-      <p><strong>Business Category:</strong> {vendor.businessCategory}</p>
-      <p><strong>Address:</strong> {vendor.address}</p>
-      <p><strong>Opening Hours:</strong> {vendor.openingHours}</p>
-      <p><strong>Closing Hours:</strong> {vendor.closingHours}</p>
-      <p><strong>Google Map Link:</strong> {vendor.googleMapLink}</p>
-    </div>
-  </div>
-);
+
 
 const CampaignPage = () => {
   const { id } = useParams();
@@ -105,7 +93,7 @@ const CampaignPage = () => {
   if (loading) return <div>Loading campaign details...</div>;
   if (error) return <div>{error}</div>;
 
-  const vendors = campaign.vendors || [];
+  // const vendors = campaign.vendors || [];
   const firstVendor = vendorDetails.length > 0 ? vendorDetails[0] : {};
 
   // Handle Back Button Click
