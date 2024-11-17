@@ -21,11 +21,11 @@ const RoleAndResponsibilities = () => {
           <p className="text-gray-600 mb-4 pl-6">
             Our commitment to excellence, expertise in cutting-edge technologies, and dedication to client.
           </p>
-          <div className='p-6'>
+          {/* <div className='p-6'>
           <button className="bg-black text-white px-4 py-2 rounded  mb-4 ">
             Explore our projects
           </button>
-          </div>
+          </div> */}
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-gray-700 p-6">
             <li className='flex items-center gap-3'><FaCheck className='text-green-600 border border-green-600 rounded-full p-1 '/>Tailored Solutions</li>
             <li className='flex items-center gap-3'><FaCheck className='text-green-600 border border-green-600 rounded-full p-1 '/> Client-Centric Approach</li>
