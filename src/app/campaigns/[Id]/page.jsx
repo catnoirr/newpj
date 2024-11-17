@@ -79,6 +79,7 @@ const CampaignPage = () => {
             closingHours: vendorSnapshot.data().closingHours || "Closing hours not available",
             googleMapLink: vendorSnapshot.data().googleMapLink || "Google Map Link not available",
             operatingDays: vendorSnapshot.data().operatingDays || "Operating days not available",
+            whatsapp: vendorSnapshot.data().whatsapp || "WhatsApp not available",
           });
         } else {
           vendorDetailsList.push({
@@ -90,6 +91,7 @@ const CampaignPage = () => {
             closingHours: "Closing hours not found",
             googleMapLink: "Google Map Link not found",
             operatingDays: "Operating days not found",
+            whatsapp: "WhatsApp not found",
           });
         }
       }
@@ -212,16 +214,34 @@ const CampaignPage = () => {
 
         {/* Opening Hours */}
         <div className="flex justify-between flex-col md:flex-row">
-        <div className="p-6  ">
-          <h3 className="text-lg font-bold text-gray-800">Opening Hours</h3>
-          <div className="grid grid-cols-1 gap-4">
-            {["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].map((day, index) => (
-              <div key={index} className="flex justify-between items-center text-gray-600 gap-16">
-                <span>{day}</span>
-                <span>8:00 AM – 10:00 PM</span>
+        <div className="p-6">
+          <h3 className="text-lg font-bold text-gray-800 mb-6">Opening Hours          <span className="text-gray-600 text-sm ">({firstVendor.operatingDays})</span>
+          </h3>
+          {firstVendor.operatingDays === "All Days" || firstVendor.operatingDays === "Everyday" || firstVendor.operatingDays === "All Day" ? (
+            <>
+              {/* <p>Operating Days: Everyday</p> <br /> */}
+              <div className="grid grid-cols-1 gap-4">
+                {["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].map((day, index) => (
+                  <div key={index} className="flex justify-between items-center text-gray-600 gap-16">
+                    <span>{day}</span>
+                    <span>{firstVendor.openingHours} : {firstVendor.closingHours}</span>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </>
+          ) : (
+            <>
+              <p>Operating Days: {firstVendor.operatingDays}</p> <br />
+              <div className="grid grid-cols-1 gap-4">
+                {["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].map((day, index) => (
+                  <div key={index} className="flex justify-between items-center text-gray-600 gap-16">
+                    <span>{day}</span>
+                    <span>08:00 AM - 5:00 PM</span>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
         </div>
 
         {/* Types of Products */}
@@ -244,10 +264,13 @@ const CampaignPage = () => {
         {/* Additional Information */}
         <div className="flex flex-col md:w-10/12 gap-20 items-center ">
         <div className="p-6 bg-green-100 text-green-700 rounded-lg mt-4">
-          <p>Join Oohpoint Official WhatsApp Channel for Regular Updates and Discounts</p>
-          <button className="mt-2 text-white bg-green-600 hover:bg-green-700 font-medium rounded-lg px-4 py-2">
+          <p>Join the Oohpoint Official WhatsApp Channel to keep yourself updated and offer you exclusive discounts!</p>
+          <button
+            onClick={() => window.open(firstVendor.whatsapp, '_blank', 'noopener noreferrer')}
+            className="mt-2 text-white bg-green-600 hover:bg-green-700 font-medium rounded-lg px-4 py-2"
+          >
             Join Now
-          </button>
+            </button>
         </div>
 
         {/* Verified Vendor */}
