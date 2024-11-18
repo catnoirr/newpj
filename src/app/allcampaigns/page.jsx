@@ -4,7 +4,6 @@ import { FaShare } from 'react-icons/fa';
 import { db } from '../../../firebaseConfig'; // Ensure correct Firebase configuration
 import { collection, getDocs, getDoc} from 'firebase/firestore';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 
 // Helper function to safely format Firebase Timestamp to a readable date string
 // const formatDate = (timestamp) => {
@@ -28,14 +27,13 @@ const normalizeDate = (date) => {
 const getStatus = (startDate, endDate) => {
   const currentDate = new Date().setHours(0, 0, 0, 0);
   const start = new Date(startDate).setHours(0, 0, 0, 0);
-  const end = new Date(endDate).setHours(0, 0, 0, 0);
+  // const end = new Date(endDate).setHours(0, 0, 0, 0);
 
   if (currentDate < start) return "Upcoming";
   else  return "Ongoing";
 };
 
 const Campaigns = () => {
-  const router = useRouter();
   const [campaigns, setCampaigns] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -124,7 +122,6 @@ const Campaigns = () => {
   }, []);
 
   // Get current date for filtering campaigns
-  const currentDate = new Date();
 
   // Filter Ongoing and Upcoming campaigns
   const ongoingCampaigns = campaigns.filter(

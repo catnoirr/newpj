@@ -28,7 +28,7 @@ const normalizeDate = (date) => {
 const getStatus = (startDate, endDate) => {
   const currentDate = new Date().setHours(0, 0, 0, 0);
   const start = new Date(startDate).setHours(0, 0, 0, 0);
-  const end = new Date(endDate).setHours(0, 0, 0, 0);
+  // const end = new Date(endDate).setHours(0, 0, 0, 0);
 
   if (currentDate < start) return "Upcoming";
   else  return "Ongoing";
@@ -124,7 +124,6 @@ const Campaigns = () => {
   }, []);
 
   // Get current date for filtering campaigns
-  const currentDate = new Date();
 
   // Filter Ongoing and Upcoming campaigns
   const ongoingCampaigns = campaigns.filter(
