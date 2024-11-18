@@ -3,10 +3,10 @@ import React, { useState, useEffect } from "react";
 import { db } from "../../../../firebaseConfig";
 import { collection, getDocs, query, where, orderBy, limit } from "firebase/firestore";
 import { FiArrowUpRight } from "react-icons/fi";
-
+import { useRouter } from "next/navigation"; // Import useRouter for navigation
 function RecentBlogPosts() {
   const [latestBlog, setLatestBlog] = useState(null);
-
+  const router = useRouter(); // Import useRouter for navigation
   useEffect(() => {
     const fetchLatestBlogPost = async () => {
       try {
@@ -63,9 +63,9 @@ function RecentBlogPosts() {
       </h2>
 
       {/* Blog Post Card */}
-      <a
-        href={`/blogs/${latestBlog.id}`} // Dynamic route
+      <div
         className="block overflow-hidden hover:shadow-lg transition-shadow duration-200 rounded-lg"
+        onClick={() => router.push(`/blogs/${latestBlog.id}`)}
       >
         {/* Blog Image */}
         <img
@@ -109,7 +109,7 @@ function RecentBlogPosts() {
             )}
           </div>
         </div>
-      </a>
+      </div>
     </section>
   );
 }

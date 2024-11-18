@@ -3,9 +3,14 @@ import React, { useState, useEffect } from "react";
 import { db } from "../../../../firebaseConfig";
 import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
 import { FiArrowUpRight } from "react-icons/fi";
+import { useRouter } from "next/navigation"; // Import useRouter for navigation
+
+
+
 
 function RecentBlogPosts() {
   const [latestBlog, setLatestBlog] = useState(null);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchLatestBlogPost = async () => {
@@ -57,9 +62,9 @@ function RecentBlogPosts() {
       </h2>
 
       {/* Blog Post Card */}
-      <a
-        href={`/blogs/${latestBlog.id}`} // Dynamic route
-        className="block overflow-hidden hover:shadow-lg transition-shadow duration-200 rounded-lg"
+      <div
+        className="block overflow-hidden hover:shadow-lg transition-shadow duration-200 rounded-lg cursor-pointer"
+        onClick={() => router.push(`/blogs/${latestBlog.id}`)}
       >
         {/* Blog Image */}
         <img
@@ -79,7 +84,7 @@ function RecentBlogPosts() {
           {/* Blog Title */}
           <h3 className="text-xl font-bold text-gray-800 mb-2 flex justify-between items-center">
             {latestBlog.title || "Untitled Blog"}
-            <FiArrowUpRight className="w-5 h-5 text-gray-500" />
+            <FiArrowUpRight className="w-5 h-5 text-gray-500 cursor-pointer"  />
           </h3>
 
           {/* Blog Description */}
@@ -93,7 +98,7 @@ function RecentBlogPosts() {
               latestBlog.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-sm text-blue-600 bg-blue-100 hover:bg-blue-200 px-3 py-1 rounded-full"
+                  className="text-sm text-blue-600 bg-blue-100 hover:bg-blue-200 px-3 py-1 rounded-full cursor-pointer"
                 >
                   {tag}
                 </span>
@@ -103,7 +108,7 @@ function RecentBlogPosts() {
             )}
           </div>
         </div>
-      </a>
+      </div>
     </section>
   );
 }

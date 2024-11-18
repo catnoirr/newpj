@@ -214,7 +214,7 @@ const CampaignCard = ({ campaign }) => {
           </div>
           <div className="flex flex-col items-center gap-1">
             <div className="bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded-full">
-              {campaign.rating}★
+              4.5★
             </div>
             <button className="text-gray-500 hover:text-gray-700">
               <FaShare />
@@ -231,15 +231,15 @@ const CampaignCard = ({ campaign }) => {
         <p className="text-gray-400 text-xs">Offer till {campaign.endDate ? campaign.endDate.toLocaleDateString() : 'No end date'}</p>
 
         {/* View Offers Button with Share (Plane) Icon */}
-        <div className="flex items-center justify-between mt-4 gap-5">
+        <div className="mt-4 ">
         <Link href={`/campaigns/${campaign.id}`}>
             <button className="w-full bg-blue-600 text-white py-4 px-10 rounded-xl transition">
               View Offers
             </button>
           </Link>
-          <button className="ml-2 text-white bg-blue-600 rounded-full p-3">
+          {/* <button className="ml-2 text-white bg-blue-600 rounded-full p-3">
             <FaPaperPlane />
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
