@@ -5,14 +5,17 @@ import {
   FaHome,
   FaUser,
   FaFileAlt,
-  FaCalendarAlt,
+  // FaCalendarAlt,
   FaQuestionCircle,
-  FaSignOutAlt,
+  // FaSignOutAlt,
   FaChevronRight,
   FaChevronLeft,
   FaBars,
+  FaRegFileAlt,
+  FaComment
 } from "react-icons/fa";
 import Link from "next/link";
+
 
 export default function Sidebar() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -66,12 +69,12 @@ export default function Sidebar() {
           <SidebarItem icon={<FaHome />} label="Home" route="/" isExpanded={isExpanded} />
           <SidebarItem icon={<FaUser />} label="Audience" route="/CampusAmbassador" isExpanded={isExpanded} />
           <SidebarItem icon={<FaFileAlt />} label="Blogs" route="/blogs" isExpanded={isExpanded} />
-          <SidebarItem icon={<FaCalendarAlt />} label="About" route="/about" isExpanded={isExpanded} />
+          <SidebarItem icon={<FaQuestionCircle />} label="About" route="/about" isExpanded={isExpanded} />
 
           <div className="border-t border-gray-300 my-2"></div>
 
-          <SidebarItem icon={<FaQuestionCircle />} label="Engagements" route="/engagements" isExpanded={isExpanded} />
-          <SidebarItem icon={<FaSignOutAlt />} label="Logout" route="/logout" isExpanded={isExpanded} textColor="text-red-500" />
+          <SidebarItem icon={<FaComment />} label="Engagements" route="/engagements" isExpanded={isExpanded} />
+          <SidebarItem icon={<FaRegFileAlt />} label="CaseStudy" route="/casestudy" isExpanded={isExpanded}  />
         </div>
       </div>
 
