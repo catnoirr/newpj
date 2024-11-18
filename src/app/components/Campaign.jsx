@@ -14,6 +14,26 @@ import { useRouter } from 'next/navigation';
 //   return 'N/A'; // Return a fallback string if there's no valid timestamp
 // };
 
+
+// Helper function to convert various formats to Date
+const normalizeDate = (date) => {
+  if (!date) return null; // Handle missing dates
+  if (date.toDate) return date.toDate(); // Firestore Timestamp
+  if (date.seconds) return new Date(date.seconds * 1000); // Seconds-based timestamp
+  if (typeof date === "string" || typeof date === "number") return new Date(date); // ISO string or timestamp
+  return date; // Already a Date object
+};
+
+// Get status of campaigns
+const getStatus = (startDate, endDate) => {
+  const currentDate = new Date().setHours(0, 0, 0, 0);
+  const start = new Date(startDate).setHours(0, 0, 0, 0);
+  const end = new Date(endDate).setHours(0, 0, 0, 0);
+
+  if (currentDate < start) return "Upcoming";
+  else  return "Ongoing";
+};
+
 const Campaigns = () => {
   const router = useRouter();
   const [campaigns, setCampaigns] = useState([]);
@@ -84,9 +104,8 @@ const Campaigns = () => {
               location: vendorAddress,
               rating: campaign.rating || 0,
               discount: campaign.vendors?.[0]?.firstPrize || 'No discount available',
-              endDate,  // Pass the actual endDate field here
-              startDate: campaign.startDate && campaign.startDate.toDate ? campaign.startDate.toDate() : null,
-            };
+              startDate: normalizeDate(campaign.startDate),
+              endDate: normalizeDate(campaign.endDate),            };
           })
         );
 
@@ -108,8 +127,12 @@ const Campaigns = () => {
   const currentDate = new Date();
 
   // Filter Ongoing and Upcoming campaigns
-  const ongoingCampaigns = campaigns.filter((campaign) => campaign.startDate && campaign.startDate <= currentDate);
-  const upcomingCampaigns = campaigns.filter((campaign) => campaign.startDate && campaign.startDate > currentDate);
+  const ongoingCampaigns = campaigns.filter(
+    (campaign) => getStatus(campaign.startDate, campaign.endDate) === "Ongoing"
+  );
+  const upcomingCampaigns = campaigns.filter(
+    (campaign) => getStatus(campaign.startDate, campaign.endDate) === "Upcoming"
+  );
 
   // Handle Pagination Logic for Ongoing Campaigns
   const indexOfLastOngoing = currentPageOngoing * itemsPerPage;
@@ -167,12 +190,13 @@ const Campaigns = () => {
 
         {/* Pagination Controls */}
         {ongoingCampaigns.length > itemsPerPage && (
-          <div className="flex justify-between mt-4">
+          <div className="flex justify-center gap-20 mt-10">
             <button onClick={prevPageOngoing} disabled={currentPageOngoing === 1} className="text-white bg-blue-600 py-2 px-4 rounded">
               Previous
             </button>
-            <span>Page {currentPageOngoing}</span>
-            <button onClick={nextPageOngoing} disabled={indexOfLastOngoing >= ongoingCampaigns.length} className="text-white bg-blue-600 py-2 px-4 rounded">
+            <span className="bg-gray-400 text-white px-4 py-2 rounded-full">
+              {currentPageOngoing}
+            </span>            <button onClick={nextPageOngoing} disabled={indexOfLastOngoing >= ongoingCampaigns.length} className="text-white bg-blue-600 py-2 px-4 rounded">
               Next
             </button>
           </div>
@@ -190,7 +214,7 @@ const Campaigns = () => {
 
         {/* Pagination Controls */}
         {upcomingCampaigns.length > itemsPerPage && (
-          <div className="flex justify-between mt-4">
+          <div className="flex justify-center gap-20 mt-10">
             <button onClick={prevPageUpcoming} disabled={currentPageUpcoming === 1} className="text-white bg-blue-600 py-2 px-4 rounded">
               Previous
             </button>
