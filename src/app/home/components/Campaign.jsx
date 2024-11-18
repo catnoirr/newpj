@@ -4,6 +4,8 @@ import { FaShare} from 'react-icons/fa';
 import { db } from '../../../../firebaseConfig'; // Ensure correct Firebase configuration
 import { collection, getDocs, getDoc} from 'firebase/firestore';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+
 
 // Helper function to safely format Firebase Timestamp to a readable date string
 // const formatDate = (timestamp) => {
@@ -14,6 +16,7 @@ import Link from 'next/link';
 // };
 
 const Campaigns = () => {
+  const router = useRouter();
   const [campaigns, setCampaigns] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -151,7 +154,10 @@ const Campaigns = () => {
       {/* Ongoing Campaigns */}
       <div className="mb-8 relative">
         <h2 className="text-xl font-bold mb-4">Ongoing Campaigns</h2>
-        <button className="absolute -top-5 right-0 text-black border border-black p-3 font-medium rounded-lg hover:bg-blue-600 hover:text-white">
+        <button
+          className="absolute -top-5 right-0 text-black border border-black p-3 font-medium rounded-lg hover:bg-blue-600 hover:text-white"
+          onClick={() => router.push("/allcampaigns")}
+        >
           View All
         </button>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-16">

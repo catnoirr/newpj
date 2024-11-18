@@ -63,7 +63,7 @@ export default function Sidebar() {
             isExpanded ? "items-start" : "items-center"
           }`}
         >
-          <SidebarItem icon={<FaHome />} label="Home" route="/home" isExpanded={isExpanded} />
+          <SidebarItem icon={<FaHome />} label="Home" route="/" isExpanded={isExpanded} />
           <SidebarItem icon={<FaUser />} label="Audience" route="/CampusAmbassador" isExpanded={isExpanded} />
           <SidebarItem icon={<FaFileAlt />} label="Blogs" route="/blogs" isExpanded={isExpanded} />
           <SidebarItem icon={<FaCalendarAlt />} label="About" route="/about" isExpanded={isExpanded} />
