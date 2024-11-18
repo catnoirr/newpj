@@ -24,7 +24,7 @@ const normalizeDate = (date) => {
 };
 
 // Get status of campaigns
-const getStatus = (startDate, endDate) => {
+const getStatus = (startDate) => {
   const currentDate = new Date().setHours(0, 0, 0, 0);
   const start = new Date(startDate).setHours(0, 0, 0, 0);
   // const end = new Date(endDate).setHours(0, 0, 0, 0);
