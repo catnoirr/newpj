@@ -78,7 +78,7 @@ const Testimonials = () => {
         </div>
 
         {/* Right Content - Image Section */}
-        <div className="md:w-1/2 flex justify-center items-center  relative m-16">
+        <div className="md:w-1/2 flex justify-end items-center  relative ">
           <div className="relative max-w-md">
             {/* Dots decoration behind the main image */}
             
