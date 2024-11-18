@@ -64,7 +64,7 @@ function RecentBlogPosts() {
 
       {/* Blog Post Card */}
       <div
-        className="block overflow-hidden hover:shadow-lg transition-shadow duration-200 rounded-lg"
+        className="block overflow-hidden hover:shadow-lg transition-shadow duration-200 rounded-lg cursor-pointer"
         onClick={() => router.push(`/blogs/${latestBlog.id}`)}
       >
         {/* Blog Image */}
@@ -85,7 +85,7 @@ function RecentBlogPosts() {
           {/* Blog Title */}
           <h3 className="text-xl font-bold text-gray-800 mb-2 flex justify-between items-center">
             {latestBlog.title || "Untitled Blog"}
-            <FiArrowUpRight className="w-5 h-5 text-gray-500" />
+            <FiArrowUpRight className="w-5 h-5 text-gray-500 cursor-pointer" />
           </h3>
 
           {/* Blog Description */}
@@ -99,7 +99,7 @@ function RecentBlogPosts() {
               latestBlog.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-sm text-blue-600 bg-blue-100 hover:bg-blue-200 px-3 py-1 rounded-full"
+                  className="text-sm text-blue-600 bg-blue-100 hover:bg-blue-200 px-3 py-1 rounded-full cursor-pointer"
                 >
                   {tag}
                 </span>
