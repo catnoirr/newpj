@@ -202,33 +202,30 @@ const CampaignPage = () => {
         </div>
 
         {/* Products Available */}
-        <div className="p-6 py-16 bg-gray-50  ">
+        <div className="p-6 py-16 bg-gray-50">
           <h3 className="text-lg font-bold text-gray-800">Products Available</h3>
-          <div className="flex justify-between py-4  md:flex-row items-center gap-2">
-            <div className="border-4 md:p-6 p-4 rounded-full shadow-lg" >
-                {/* <img src="../coffe.png" alt="coffeelogo" className="p-3 md:p-3 rounded-full products w-12 h-12 md:w-16 md:h-16" /> */}
-                <FaUtensils className="md:text-4xl text-xl "/>
-            </div>
-            <div className="border-4 md:p-6 p-4 rounded-full shadow-lg"  >
-                {/* <img src="../pastries.png" alt="pastries logo" className="p-3 rounded-full products  w-12 h-12 md:w-16 md:h-16" /> */}
-                <FaConciergeBell title="Apple" className="md:text-4xl text-xl" />
-            </div> 
-            <div  className="border-4 md:p-6 p-4 rounded-full shadow-lg" >
-                {/* <img src="../sandwitches.png" alt="sandwitches logo" className="p-3 px-4 rounded-full products  w-12 h-12 md:w-16 md:h-16" /> */}
-                <FaBreadSlice title="Bread"   className="md:text-4xl text-xl"/>
-            </div>
-            <div  className="border-4 md:p-6 p-4 rounded-full shadow-lg" >
-                {/* <img src="../coffe.png" alt="coffeelogo" className="p-3 rounded-full products  w-12 h-12 md:w-16 md:h-16" /> */}
-                <FaPizzaSlice title="Carrot"  className="md:text-4xl text-xl" />
-            </div>
-            <div  className="border-4 md:p-6 p-4 rounded-full shadow-lg" >
-                {/* <img src="../pastries.png" alt="pastries logo" className="p-3 rounded-full products  w-12 h-12 md:w-16 md:h-16" /> */}
-                <FaMugHot title="Cookie"  className="md:text-4xl text-xl" />
-            </div>
-            {/* <div>
-                <img src="../sandwitches.png" alt="sandwitches logo"  className="p-3 px-4 rounded-full products  w-12 h-12 md:w-16 md:h-16"/>
-            </div> */}
-           
+          <div className="flex justify-between py-4 md:flex-row items-center gap-2 flex-wrap">
+            {firstVendor.keyProducts ? (
+              firstVendor.keyProducts.split(",").map((item, index) => (
+                <div className="flex flex-col items-center gap-2" key={index}>
+
+
+                <div className="border-4 md:p-6 p-4 rounded-full shadow-lg text-center flex flex-col items-center">
+                  {index === 0 && <FaUtensils className="md:text-4xl text-xl " />}
+                  {index === 1 && <FaConciergeBell className="md:text-4xl text-xl" />}
+                  {index === 2 && <FaBreadSlice className="md:text-4xl text-xl" />}
+                  {index === 3 && <FaPizzaSlice className="md:text-4xl text-xl" />}
+                  {index === 4 && <FaMugHot className="md:text-4xl text-xl" />}
+                  
+                </div>
+                <div className="text-sm ">{item}</div>
+                </div>
+              ))
+            ) : (
+              <div className="border-4 md:p-6 p-4 rounded-full shadow-lg text-center">
+                <FaUtensils className="md:text-4xl text-xl blink" />
+              </div>
+            )}
           </div>
         </div>
 
