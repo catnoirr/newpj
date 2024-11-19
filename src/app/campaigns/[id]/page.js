@@ -69,6 +69,7 @@ const CampaignPage = () => {
             operatingDays: vendorSnapshot.data().operatingDays || "Operating days not available",
             whatsapp: vendorSnapshot.data().whatsapp || "WhatsApp not available",
             shopImage: vendorSnapshot.data().shopImage || "Shop Image not available",
+            keyProducts: vendorSnapshot.data().keyProducts || "Key products not available",
           });
         } else {
           vendorDetailsList.push({
@@ -82,6 +83,7 @@ const CampaignPage = () => {
             operatingDays: "Operating days not found",
             whatsapp: "WhatsApp not found",
             shopImage: "Shop Image not found",
+            keyProducts: "Key products not found",
           });
         }
       }
@@ -110,8 +112,8 @@ const CampaignPage = () => {
                <button><FaArrowLeft className="text-xl" onClick={handleBackClick}/></button>
                <h1 className="text-3xl font-semibold">{campaign.campaignName}</h1>
             </div>
-            <div className="bg-white p-2 my-3 max-w-96">
-             Home / India / Mumbai / Pawai / Meat&Fish Shops
+            <div className="bg-white p-2 my-3 max-w-80">
+             Home / Campaigns / {campaign.campaignName}
             </div>
         </div>
       <div className=" mx-auto bg-white shadow-lg rounded-lg  flex gap-10 flex-col md:flex-row">
@@ -207,7 +209,7 @@ const CampaignPage = () => {
         </div>
 
         {/* Opening Hours */}
-        <div className="flex justify-between flex-col md:flex-row">
+        <div className="flex gap-20 flex-col md:flex-row">
         <div className="p-6">
           <h3 className="text-lg font-bold text-gray-800 mb-6">Opening Hours          <span className="text-gray-600 text-sm ">({firstVendor.operatingDays})</span>
           </h3>
@@ -218,7 +220,23 @@ const CampaignPage = () => {
                 {["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].map((day, index) => (
                   <div key={index} className="flex justify-between items-center text-gray-600 gap-16">
                     <span>{day}</span>
-                    <span>{firstVendor.openingHours} : {firstVendor.closingHours}</span>
+                    <span>
+                      {firstVendor.openingHours &&
+                        firstVendor.closingHours &&
+                        `${new Date(
+                          `1970-01-01T${firstVendor.openingHours}Z`
+                        ).toLocaleTimeString([], {
+                          hour: "2-digit",
+                          minute: "2-digit",
+                          hour12: true,
+                        })} : ${new Date(
+                          `1970-01-01T${firstVendor.closingHours}Z`
+                        ).toLocaleTimeString([], {
+                          hour: "2-digit",
+                          minute: "2-digit",
+                          hour12: true,
+                        })}`}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -241,16 +259,18 @@ const CampaignPage = () => {
         {/* Types of Products */}
         <div className="p-6 flex  flex-col justify-center">
           <h3 className="text-lg font-bold text-gray-800">Types Of Products</h3>
-          <div className="flex flex-wrap gap-2 mt-4">
-            {["Earphones", "Headphones", "Mobile Cover", "Mobile Charger", "Data Cable"].map((item, index) => (
-              <span
-                key={index}
-                className="bg-blue-100 text-blue-600 px-3 py-2 rounded-md  text-sm font-medium"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
+          {firstVendor.keyProducts && (
+            <div className="flex flex-wrap gap-2 mt-4">
+              {firstVendor.keyProducts.split(',').map((item) => (
+                <span
+                  key={item}
+                  className="bg-blue-100 text-blue-600 px-3 py-2 rounded-md  text-sm font-medium"
+                >
+                  {item.trim()}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
         </div>
         </div>
