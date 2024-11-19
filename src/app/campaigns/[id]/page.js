@@ -68,6 +68,7 @@ const CampaignPage = () => {
             googleMapLink: vendorSnapshot.data().googleMapLink || "Google Map Link not available",
             operatingDays: vendorSnapshot.data().operatingDays || "Operating days not available",
             whatsapp: vendorSnapshot.data().whatsapp || "WhatsApp not available",
+            shopImage: vendorSnapshot.data().shopImage || "Shop Image not available",
           });
         } else {
           vendorDetailsList.push({
@@ -80,6 +81,7 @@ const CampaignPage = () => {
             googleMapLink: "Google Map Link not found",
             operatingDays: "Operating days not found",
             whatsapp: "WhatsApp not found",
+            shopImage: "Shop Image not found",
           });
         }
       }
@@ -125,9 +127,11 @@ const CampaignPage = () => {
                         </div>
 
               <div>
+               
                 <h2 className="text-2xl font-bold text-gray-800">{firstVendor.businessName ||"N/A"}</h2>
               <p className="text-sm text-gray-600">{firstVendor.businessCategory || "N/A"} </p>
                <p className="text-sm text-gray-600">{firstVendor.address || "N/A"}</p>
+<p className="text-sm text-gray-600">Vendor ID: {firstVendor.vendorId || "N/A"}</p>
               </div>
               </div>
               <div className="flex flex-col justify-center items-center">
@@ -251,6 +255,12 @@ const CampaignPage = () => {
 
         {/* Additional Information */}
         <div className="flex flex-col md:w-10/12 gap-20 items-center ">
+        {firstVendor.shopImage && (
+          <div>
+            <img src={firstVendor.shopImage}  alt="shop image" className="w-full h-64 rounded-lg mt-3 " />
+          </div>
+        )}
+
         <div className="p-6 bg-green-100 text-green-700 rounded-lg mt-4">
           <p>Join the Oohpoint Official WhatsApp Channel to keep yourself updated and offer you exclusive discounts!</p>
           <button
