@@ -12,6 +12,13 @@ import { FaUtensils,  FaBreadSlice,FaConciergeBell,FaPizzaSlice,FaMugHot } from 
 //ready to push
 
 const CampaignPage = () => {
+  
+  // Function to handle active tabs
+  const [activeTab, setActiveTab] = useState("");
+ 
+  // const handleActiveTab = (tab) => {
+  //   setActiveTab(tab);
+  // };
   const { id } = useParams();
   const router = useRouter();
 
@@ -120,23 +127,23 @@ const CampaignPage = () => {
     <div className="bg-gray-100 min-h-screen p-2">
         <div>
             <div className="flex items-center gap-4 ">
-               <button><FaArrowLeft className="text-xl" onClick={handleBackClick}/></button>
+               <button><FaArrowLeft className="text-xl md:hidden" onClick={handleBackClick}/></button>
                <h1 className="text-3xl font-semibold">{campaign.campaignName}</h1>
             </div>
             <div className="bg-white p-2 my-3 max-w-80">
              Home / Campaigns / {campaign.campaignName}
             </div>
         </div>
-      <div className=" mx-auto bg-white shadow-lg rounded-lg  flex gap-10 flex-col md:flex-row">
+      <div className=" mx-auto shadow-lg rounded-lg  flex gap-10  flex-col md:flex-row  ">
         <div>
-        <div className="p-6 border-b border-gray-200">
+          <div className="flex items-start bg-white">
+        <div className="p-6 border-2 shadow-lg  ">
           {/* Campaign Header */}
-          <div className="flex items-start">
             <div className="w-full">
             <div className="flex justify-between">
                 <div className="flex gap-3 ">
-                    <div className=" rounded-3xl">
-                        <img src={campaign.adCreative} alt=""  className="w-20 h-20 bg-beige-400 rounded-2xl"/>
+                    <div className=" rounded-3xl ">
+                        <img src={campaign.adCreative} alt=""  className="w-20 h-20 bg-beige-400 object-cover rounded-2xl "/>
                         </div>
 
               <div>
@@ -193,152 +200,136 @@ const CampaignPage = () => {
 
         {/* Navigation Tabs */}
         <div className="p-6 bg-blue-600  space-x-4 text-white flex justify-between flex-col md:flex-row">
-            <div className="">
-          <button className="px-4 py-2 font-medium">Overview</button>
-          <button className="px-4 py-2 font-medium">Offers</button>
-          {/* <button className="px-4 py-2 font-medium">Reviews</button> */}
-          <button className="px-4 py-2 font-medium">Images</button>
+          <div className="flex gap-4 ">
+            <button className="px-4 py-2 font-medium border-2 rounded-full hover:border-gray-500" onClick={() => setActiveTab('overview')}>Overview</button>
+            <button className="px-4 py-2 font-medium border-2 rounded-full hover:border-gray-500 " onClick={() => setActiveTab('offers')}>Offers</button>
+            <button className="px-4 py-2 font-medium border-2 rounded-full hover:border-gray-500 " onClick={() => setActiveTab('images')}>Images</button>
           </div>
-          <button className="px-4 py-2 font-medium border p-3 border-gray-500 rounded">Visit Site</button>
-        </div>
-          
-
- {/* start here */}
-  <div className="border-2 shadow-lg ">
-        {/* Products Available */}
-        <div className="p-6 py-16 bg-gray-50">
-          <h3 className="text-lg font-bold text-gray-800">Products Available</h3>
-          <div className="flex justify-between py-4 md:flex-row items-center gap-2 flex-wrap">
-            {firstVendor.keyProducts ? (
-              firstVendor.keyProducts.split(",").map((item, index) => (
-                <div className="flex flex-col items-center gap-2" key={index}>
-
-
-                <div className="border-4 md:p-6 p-4 rounded-full shadow-lg text-center flex flex-col items-center">
-                  {index === 0 && <FaUtensils className="md:text-4xl text-xl " />}
-                  {index === 1 && <FaConciergeBell className="md:text-4xl text-xl" />}
-                  {index === 2 && <FaBreadSlice className="md:text-4xl text-xl" />}
-                  {index === 3 && <FaPizzaSlice className="md:text-4xl text-xl" />}
-                  {index === 4 && <FaMugHot className="md:text-4xl text-xl" />}
-                  
-                </div>
-                <div className="text-sm ">{item}</div>
-                </div>
-              ))
-            ) : (
-              <div className="border-4 md:p-6 p-4 rounded-full shadow-lg text-center">
-                <FaUtensils className="md:text-4xl text-xl blink" />
-              </div>
-            )}
-          </div>
+          {/* <button className="px-4 py-2 font-medium border p-3 border-gray-500 rounded" onClick={() => window.location.href = firstVendor.website}>Visit Site</button> */}
         </div>
 
-        {/* Opening Hours */}
-        <div className="flex gap-20 flex-col md:flex-row">
-        <div className="p-6">
-          <h3 className="text-lg font-bold text-gray-800 mb-6">Opening Hours          <span className="text-gray-600 text-sm ">({firstVendor.operatingDays})</span>
-          </h3>
-          {firstVendor.operatingDays === "All Days" || firstVendor.operatingDays === "Everyday" || firstVendor.operatingDays === "All Day" ? (
-            <>
-              {/* <p>Operating Days: Everyday</p> <br /> */}
-              <div className="grid grid-cols-1 gap-4">
-                {["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].map((day, index) => (
-                  <div key={index} className="flex justify-between items-center text-gray-600 gap-16">
-                    <span>{day}</span>
-                    <span>
-                      {firstVendor.openingHours &&
-                        firstVendor.closingHours &&
-                        `${new Date(
-                          `1970-01-01T${firstVendor.openingHours}Z`
-                        ).toLocaleTimeString([], {
-                          hour: "2-digit",
-                          minute: "2-digit",
-                          hour12: true,
-                        })} : ${new Date(
-                          `1970-01-01T${firstVendor.closingHours}Z`
-                        ).toLocaleTimeString([], {
-                          hour: "2-digit",
-                          minute: "2-digit",
-                          hour12: true,
-                        })}`}
-                    </span>
+        {/* Content based on active tab */}
+        {(!activeTab || activeTab === 'overview') && (
+          <div className="border-2 shadow-lg ">
+            {/* Products Available */}
+            <div className="p-6 py-16 bg-gray-50">
+              <h3 className="text-lg font-bold text-gray-800">Products Available</h3>
+              <div className="flex justify-between py-4 md:flex-row items-center gap-2 flex-wrap">
+                {firstVendor.keyProducts ? (
+                  firstVendor.keyProducts.split(",").map((item, index) => (
+                    <div className="flex flex-col items-center gap-2" key={index}>
+                      <div className="border-4 md:p-6 p-4 rounded-full shadow-lg text-center flex flex-col items-center">
+                        {index === 0 && <FaUtensils className="md:text-4xl text-xl " />}
+                        {index === 1 && <FaConciergeBell className="md:text-4xl text-xl" />}
+                        {index === 2 && <FaBreadSlice className="md:text-4xl text-xl" />}
+                        {index === 3 && <FaPizzaSlice className="md:text-4xl text-xl" />}
+                        {index === 4 && <FaMugHot className="md:text-4xl text-xl" />}
+                      </div>
+                      <div className="text-sm ">{item}</div>
+                    </div>
+                  ))
+                ) : (
+                  <div className="border-4 md:p-6 p-4 rounded-full shadow-lg text-center">
+                    <FaUtensils className="md:text-4xl text-xl blink" />
                   </div>
-                ))}
+                )}
               </div>
-            </>
-          ) : (
-            <>
-              <p>Operating Days: {firstVendor.operatingDays}</p> <br />
-              <div className="grid grid-cols-1 gap-4">
-                {["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].map((day, index) => (
-                  <div key={index} className="flex justify-between items-center text-gray-600 gap-16">
-                    <span>{day}</span>
-                    <span>08:00 AM - 5:00 PM</span>
-                  </div>
-                ))}
-              </div>
-            </>
-          )}
-        </div>
-
-        {/* Types of Products */}
-        <div className="p-6 flex  flex-col justify-center">
-          <h3 className="text-lg font-bold text-gray-800">Types Of Products</h3>
-          {firstVendor.keyProducts && (
-            <div className="flex flex-wrap gap-2 mt-4">
-              {firstVendor.keyProducts.split(',').map((item) => (
-                <span
-                  key={item}
-                  className="bg-blue-100 text-blue-600 px-3 py-2 rounded-md  text-sm font-medium"
-                >
-                  {item.trim()}
-                </span>
-              ))}
             </div>
-          )}
-        </div>
-        </div>
-        </div>
-   {/* end here */}
-   {/* offer section */}
-   <div className="flex flex-col gap-4 w-full p-4 border-2 shadow-lg ">
-    <div className="flex justify-between items-center text-2xl">
-      <h1>Get off on any items of ChaiBuzz</h1>
-      <img src="/shopoffer.png" alt=" "/>
-    </div>
-    <div className="flex justify-end">T&C Applied</div>
-   </div>
-   {/* end of offer section */}
 
-        </div>
+            {/* Opening Hours */}
+            <div className="flex gap-20 flex-col md:flex-row bg-white">
+              <div className="p-6">
+                <h3 className="text-lg font-bold text-gray-800 mb-6">Opening Hours <span className="text-gray-600 text-sm ">({firstVendor.operatingDays})</span></h3>
+                {firstVendor.operatingDays === "All Days" || firstVendor.operatingDays === "Everyday" || firstVendor.operatingDays === "All Day" ? (
+                  <div className="grid grid-cols-1 gap-4">
+                    {["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].map((day, index) => (
+                      <div key={index} className="flex justify-between items-center text-gray-600 gap-16">
+                        <span>{day}</span>
+                        <span>
+                          {firstVendor.openingHours && firstVendor.closingHours && `${new Date(`1970-01-01T${firstVendor.openingHours}Z`).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: true })} : ${new Date(`1970-01-01T${firstVendor.closingHours}Z`).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: true })}`}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div>
+                    <p>Operating Days: {firstVendor.operatingDays}</p>
+                    <div className="grid grid-cols-1 gap-4">
+                      {["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].map((day, index) => (
+                        <div key={index} className="flex justify-between items-center text-gray-600 gap-16">
+                          <span>{day}</span>
+                          <span>08:00 AM - 5:00 PM</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
 
-        {/* Additional Information */}
-        <div className="flex flex-col md:w-10/12 gap-20 items-center ">
-        {firstVendor.shopImage && (
-          <div>
-            <img src={firstVendor.shopImage}  alt="shop image" className="w-full h-64 rounded-lg mt-3 " />
+              {/* Types of Products */}
+              <div className="p-6 flex flex-col justify-center">
+                <h3 className="text-lg font-bold text-gray-800">Types Of Products</h3>
+                {firstVendor.keyProducts && (
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {firstVendor.keyProducts.split(',').map((item) => (
+                      <span key={item} className="bg-blue-100 text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
+                        {item.trim()}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
+        {activeTab === 'offers' && (
+          <div className="flex flex-col gap-4 w-full p-4 border-2 shadow-lg bg-white">
+            <div className="flex justify-between items-center text-2xl">
+              <h1>Get <span className="font-bold">{campaign.vendors?.[0]?.firstPrize}</span> off on any items of ChaiBuzz</h1>
+              <img src="/shopoffer.png" alt=" " />
+            </div>
+            <div className="flex justify-end">T&C Applied</div>
           </div>
         )}
 
-        <div className="p-6 bg-green-100 text-green-700 rounded-lg mt-4">
+        {activeTab === 'images' && (
+          <div className="flex flex-col gap-4 w-full p-4 border-2 shadow-lg bg-white">
+            {/* Implement image gallery here */}
+            <div className="flex  items-center flex-wrap gap-10 flex-col md:flex-row ">
+            <div className="border-2 rounded "><img src={firstVendor.shopImage}  alt="shop image" className="object-contain w-60 h-60" /></div>
+            <div className="border-2 rounded "><img src={campaign.adCreative} alt=""  className="object-contain w-60 h-60 "/></div>
+          </div>       
+             </div>
+        )}
+        </div>
+
+        {/* Additional Information */}
+        <div className="flex flex-col md:w-10/12 gap items-center p-4 py-0 ">
+        {firstVendor.shopImage && (
+          <div className="w-full">
+            <img src={firstVendor.shopImage}  alt="shop image" className="w-full h-64   object-cover " />
+          </div>
+        )}
+
+        <div className="p-6 bg-green-500 text-white rounded-lg mt-4">
           <p>Join the Oohpoint Official WhatsApp Channel to keep yourself updated and offer you exclusive discounts!</p>
           <button
             onClick={() => router.push(firstVendor.whatsapp)}
-            className="mt-2 text-white bg-green-600 hover:bg-green-700 font-medium rounded-lg px-4 py-2"
+            className="mt-2 text-white border hover:bg-green-700 font-medium rounded-lg px-4 py-2"
           >
             Join Now
           </button>
         </div>
 
         {/* Verified Vendor */}
-        <div className="p-6">
+        <div className="p-6 bg-white">
           <h3 className="text-lg font-bold text-gray-800">Verified Vendor</h3>
           <p className="text-gray-600">
             {firstVendor.address }
           </p>
           <p>Location : {firstVendor.googleMapLink}
           </p>
-          <button className="mt-4 text-white bg-purple-600 hover:bg-purple-700 font-medium rounded-lg px-4 py-2">
+          <button className="mt-4 text-white bg-blue-600 hover:bg-purple-700 font-medium rounded-lg px-4 py-2">
             Visit Now
           </button>
         </div>
