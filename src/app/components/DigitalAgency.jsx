@@ -9,7 +9,7 @@ const DigitalAgency = () => {
       <div className="flex flex-col md:flex-row items-center bg-white mt-2 md:mt-0">
         <div className="flex-1">
           <img
-            src="agency.png"
+            src="screenshot1.png"
             alt="Meeting illustration"
             className="w-full max-w-sm mx-auto md:max-w-none md:mx-0"
           />

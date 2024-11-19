@@ -196,12 +196,15 @@ const CampaignPage = () => {
             <div className="">
           <button className="px-4 py-2 font-medium">Overview</button>
           <button className="px-4 py-2 font-medium">Offers</button>
-          <button className="px-4 py-2 font-medium">Reviews</button>
+          {/* <button className="px-4 py-2 font-medium">Reviews</button> */}
           <button className="px-4 py-2 font-medium">Images</button>
           </div>
           <button className="px-4 py-2 font-medium border p-3 border-gray-500 rounded">Visit Site</button>
         </div>
+          
 
+ {/* start here */}
+  <div className="border-2 shadow-lg ">
         {/* Products Available */}
         <div className="p-6 py-16 bg-gray-50">
           <h3 className="text-lg font-bold text-gray-800">Products Available</h3>
@@ -295,6 +298,18 @@ const CampaignPage = () => {
           )}
         </div>
         </div>
+        </div>
+   {/* end here */}
+   {/* offer section */}
+   <div className="flex flex-col gap-4 w-full p-4 border-2 shadow-lg ">
+    <div className="flex justify-between items-center text-2xl">
+      <h1>Get off on any items of ChaiBuzz</h1>
+      <img src="/shopoffer.png" alt=" "/>
+    </div>
+    <div className="flex justify-end">T&C Applied</div>
+   </div>
+   {/* end of offer section */}
+
         </div>
 
         {/* Additional Information */}
