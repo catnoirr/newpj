@@ -138,8 +138,10 @@ const CampaignPage = () => {
                 <div className="bg-blue-600 text-white w-16 p-1 rounded-lg text-center">
                 ★ 4.5
                 </div>
-                <div className="text-sm">1200+ Scans</div>
-                <div className="relative -right-5 text-2xl  mt-2">
+                <div className="text-sm">
+                  {Array.isArray(campaign.ipAddress) ? `${campaign.ipAddress.length}+ Scans` : "0 Scans"}
+                </div>
+                <div className="relative -right-5 text-2xl mt-2">
                     <button><FaShareAlt/></button>
                 </div>
               </div>

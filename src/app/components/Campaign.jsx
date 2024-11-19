@@ -105,7 +105,11 @@ const Campaigns = () => {
               rating: campaign.rating || 0,
               discount: campaign.vendors?.[0]?.firstPrize || 'No discount available',
               startDate: normalizeDate(campaign.startDate),
-              endDate: normalizeDate(campaign.endDate),            };
+              endDate: normalizeDate(campaign.endDate),      
+            
+            
+            };
+
           })
         );
 
