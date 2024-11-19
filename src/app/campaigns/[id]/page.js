@@ -6,7 +6,7 @@ import { FaArrowLeft, FaShareAlt } from "react-icons/fa";
 import { useRouter } from "next/navigation"; 
 import { db } from "../../../../firebaseConfig";
 import { doc, getDoc } from "firebase/firestore";
-import { FaUtensils,  FaBreadSlice,FaConciergeBell,FaPizzaSlice,FaMugHot,FaSpinner } from "react-icons/fa";
+import { FaUtensils,  FaBreadSlice,FaConciergeBell,FaPizzaSlice,FaMugHot } from "react-icons/fa";
 
 // Vendor Detail Component
 //ready to push
@@ -97,9 +97,10 @@ const CampaignPage = () => {
 
   if (loading) {
     return (
-      <div className=" inset-0 flex justify-center items-center bg-gray-200">
-        <div className="bg-gradient-to-r from-transparent to-gray-200 animate-gradient-x rounded-md overflow-hidden p-4 flex justify-center items-center">
-          <FaSpinner className="animate-spin text-4xl text-gray-500" />
+      <div className="relative inset-0 flex justify-center items-center bg-gray-200 h-screen">
+        <div className=" h-full bg-gradient-to-r from-transparent  animate-gradient-x rounded-md overflow-hidden p-4 flex justify-center items-center">
+          {/* <FaMugHot className="text-4xl text-gray-500 blink" /> */}
+          <img src="/logo.png" alt="Loading..." className="w-16 h-16 blink"/>
         </div>
       </div>
     );
