@@ -6,7 +6,7 @@ import { FaArrowLeft, FaShareAlt } from "react-icons/fa";
 import { useRouter } from "next/navigation"; 
 import { db } from "../../../../firebaseConfig";
 import { doc, getDoc } from "firebase/firestore";
-import { FaUtensils,  FaBreadSlice,FaConciergeBell,FaPizzaSlice,FaMugHot } from "react-icons/fa";
+import { FaUtensils,  FaBreadSlice,FaConciergeBell,FaPizzaSlice,FaMugHot,FaSpinner } from "react-icons/fa";
 
 // Vendor Detail Component
 //ready to push
@@ -95,7 +95,15 @@ const CampaignPage = () => {
     fetchVendorDetails();
   }, [campaign]);
 
-  if (loading) return <div>Loading campaign details...</div>;
+  if (loading) {
+    return (
+      <div className=" inset-0 flex justify-center items-center bg-gray-200">
+        <div className="bg-gradient-to-r from-transparent to-gray-200 animate-gradient-x rounded-md overflow-hidden p-4 flex justify-center items-center">
+          <FaSpinner className="animate-spin text-4xl text-gray-500" />
+        </div>
+      </div>
+    );
+  }
   if (error) return <div>{error}</div>;
 
   // const vendors = campaign.vendors || [];
@@ -124,19 +132,28 @@ const CampaignPage = () => {
           <div className="flex items-start">
             <div className="w-full">
             <div className="flex justify-between">
-                <div className="flex gap-3">
+                <div className="flex gap-3 ">
                     <div className=" rounded-3xl">
                         <img src={campaign.adCreative} alt=""  className="w-20 h-20 bg-beige-400 rounded-2xl"/>
                         </div>
 
               <div>
-               
-                <h2 className="text-2xl font-bold text-gray-800">{firstVendor.businessName ||"N/A"}</h2>
-              <p className="text-sm text-gray-600">{firstVendor.businessCategory || "N/A"} </p>
-               <p className="text-sm text-gray-600">{firstVendor.address || "N/A"}</p>
-<p className="text-sm text-gray-600">Vendor ID: {firstVendor.vendorId || "N/A"}</p>
+                <h2 className="text-2xl font-bold text-gray-800">
+                  {firstVendor.businessName ? firstVendor.businessName : <span className="blink">Loading..</span>}
+                </h2>
+              <p className="text-sm text-gray-600">
+                {firstVendor.businessCategory ? firstVendor.businessCategory : <span className="blink"></span>}
+              </p>
+              <p className="text-sm text-gray-600">
+                {firstVendor.address ? firstVendor.address : <span className="blink"></span>}
+              </p>
+              <p className="text-sm text-gray-600">
+                Vendor ID: {firstVendor.vendorId ? firstVendor.vendorId : <span className="blink"></span>}
+              </p>
               </div>
               </div>
+
+            
               <div className="flex flex-col justify-center items-center">
                 <div className="bg-blue-600 text-white w-16 p-1 rounded-lg text-center">
                 ★ 4.5
