@@ -23,6 +23,7 @@ const CampaignPage = () => {
   // Fetch campaign details
   useEffect(() => {
     if (!id) return;
+    window.scrollTo({ top: 0, behavior: "smooth" });
 
     const fetchCampaign = async () => {
       try {

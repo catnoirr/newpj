@@ -36,6 +36,7 @@ const getStatus = (startDate) => {
 
 const Campaigns = () => {
   const router = useRouter();
+  
   const [campaigns, setCampaigns] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -234,6 +235,7 @@ const Campaigns = () => {
 
 // Component to render individual campaign cards
 const CampaignCard = ({ campaign }) => {
+  const router = useRouter();
   return (
     <div className="border rounded-lg shadow-lg overflow-hidden relative">
       <img src={campaign.img} alt={campaign.title} className="w-full h-60 object-cover" />
@@ -264,11 +266,9 @@ const CampaignCard = ({ campaign }) => {
 
         {/* View Offers Button with Share (Plane) Icon */}
         <div className="  mt-4">
-        <Link href={`/campaigns/${campaign.id}`}>
-            <button className="w-full bg-blue-600 text-white py-4 px-10 rounded-xl transition">
-              View Offers
-            </button>
-          </Link>
+        <button className="w-full bg-blue-600 text-white py-4 px-10 rounded-xl transition" onClick={() => router.push(`/campaigns/${campaign.id}`)}>
+          View Offers
+        </button>
           {/* <button className="ml-2 text-white bg-blue-600 rounded-full p-3">
             <FaPaperPlane />
           </button> */}
