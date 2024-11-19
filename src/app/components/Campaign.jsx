@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { FaShare } from 'react-icons/fa';
 import { db } from '../../../firebaseConfig'; // Ensure correct Firebase configuration
 import { collection, getDocs, getDoc} from 'firebase/firestore';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 // Helper function to safely format Firebase Timestamp to a readable date string
