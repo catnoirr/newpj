@@ -6,6 +6,7 @@ import { FaArrowLeft, FaShareAlt } from "react-icons/fa";
 import { useRouter } from "next/navigation"; 
 import { db } from "../../../../firebaseConfig";
 import { doc, getDoc } from "firebase/firestore";
+import { FaUtensils,  FaBreadSlice,FaConciergeBell,FaPizzaSlice,FaMugHot } from "react-icons/fa";
 
 // Vendor Detail Component
 //ready to push
@@ -185,25 +186,30 @@ const CampaignPage = () => {
         {/* Products Available */}
         <div className="p-6 py-16 bg-gray-50  ">
           <h3 className="text-lg font-bold text-gray-800">Products Available</h3>
-          <div className="flex justify-between p-4  md:flex-row items-center gap-2">
-            <div >
-                <img src="../coffe.png" alt="coffeelogo" className="p-3 md:p-3 rounded-full products w-12 h-12 md:w-16 md:h-16" />
+          <div className="flex justify-between py-4  md:flex-row items-center gap-2">
+            <div className="border-4 md:p-6 p-4 rounded-full shadow-lg" >
+                {/* <img src="../coffe.png" alt="coffeelogo" className="p-3 md:p-3 rounded-full products w-12 h-12 md:w-16 md:h-16" /> */}
+                <FaUtensils className="md:text-4xl text-xl "/>
             </div>
-            <div>
-                <img src="../pastries.png" alt="pastries logo" className="p-3 rounded-full products  w-12 h-12 md:w-16 md:h-16" />
+            <div className="border-4 md:p-6 p-4 rounded-full shadow-lg"  >
+                {/* <img src="../pastries.png" alt="pastries logo" className="p-3 rounded-full products  w-12 h-12 md:w-16 md:h-16" /> */}
+                <FaConciergeBell title="Apple" className="md:text-4xl text-xl" />
             </div> 
-            <div>
-                <img src="../sandwitches.png" alt="sandwitches logo" className="p-3 px-4 rounded-full products  w-12 h-12 md:w-16 md:h-16" />
+            <div  className="border-4 md:p-6 p-4 rounded-full shadow-lg" >
+                {/* <img src="../sandwitches.png" alt="sandwitches logo" className="p-3 px-4 rounded-full products  w-12 h-12 md:w-16 md:h-16" /> */}
+                <FaBreadSlice title="Bread"   className="md:text-4xl text-xl"/>
             </div>
-            <div>
-                <img src="../coffe.png" alt="coffeelogo" className="p-3 rounded-full products  w-12 h-12 md:w-16 md:h-16" />
+            <div  className="border-4 md:p-6 p-4 rounded-full shadow-lg" >
+                {/* <img src="../coffe.png" alt="coffeelogo" className="p-3 rounded-full products  w-12 h-12 md:w-16 md:h-16" /> */}
+                <FaPizzaSlice title="Carrot"  className="md:text-4xl text-xl" />
             </div>
-            <div>
-                <img src="../pastries.png" alt="pastries logo" className="p-3 rounded-full products  w-12 h-12 md:w-16 md:h-16" />
+            <div  className="border-4 md:p-6 p-4 rounded-full shadow-lg" >
+                {/* <img src="../pastries.png" alt="pastries logo" className="p-3 rounded-full products  w-12 h-12 md:w-16 md:h-16" /> */}
+                <FaMugHot title="Cookie"  className="md:text-4xl text-xl" />
             </div>
-            <div>
+            {/* <div>
                 <img src="../sandwitches.png" alt="sandwitches logo"  className="p-3 px-4 rounded-full products  w-12 h-12 md:w-16 md:h-16"/>
-            </div>
+            </div> */}
            
           </div>
         </div>
