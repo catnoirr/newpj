@@ -69,7 +69,7 @@ function RecentBlogPosts() {
   };
 
   // Render a loading message
-  if (!latestBlog) {
+  if (loading) {
     return (
       <section className="p-6 bg-white shadow-md rounded-lg">
         {/* <h2 className="text-2xl font-semibold text-gray-800 mb-6">
