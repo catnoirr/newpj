@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { FaShare } from 'react-icons/fa';
 import { db } from '../../../firebaseConfig'; // Ensure correct Firebase configuration
 import { collection, getDocs, getDoc} from 'firebase/firestore';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 // Helper function to safely format Firebase Timestamp to a readable date string
 // const formatDate = (timestamp) => {
@@ -24,12 +24,13 @@ const normalizeDate = (date) => {
 };
 
 // Get status of campaigns
-const getStatus = (startDate) => {
+const getStatus = (startDate,endDate) => {
   const currentDate = new Date().setHours(0, 0, 0, 0);
   const start = new Date(startDate).setHours(0, 0, 0, 0);
-  // const end = new Date(endDate).setHours(0, 0, 0, 0);
+  const end = new Date(endDate).setHours(0, 0, 0, 0);
 
   if (currentDate < start) return "Upcoming";
+  else if (currentDate > end) return "Expired"; 
   else  return "Ongoing";
 };
 
@@ -225,6 +226,16 @@ const Campaigns = () => {
 
 // Component to render individual campaign cards
 const CampaignCard = ({ campaign }) => {
+  const isUpcoming = new Date() < new Date(campaign.startDate);
+const router = useRouter();
+  const formatDate = (date) => {
+    return new Date(date).toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+    });
+  };
+
   return (
     <div className="border rounded-lg shadow-lg overflow-hidden relative">
       <img src={campaign.img} alt={campaign.title} className="w-full h-60 object-cover" />
@@ -250,19 +261,19 @@ const CampaignCard = ({ campaign }) => {
           Get up to {campaign.discount} off on any product
         </p>
 
-        {/* Show the actual endDate value */}
-        <p className="text-gray-400 text-xs">Offer till {campaign.endDate ? campaign.endDate.toLocaleDateString() : 'No end date'}</p>
+        {/* Show start date if upcoming, otherwise show end date */}
+        <p className="text-gray-400 text-xs">
+          {isUpcoming ? `Starts on ${formatDate(campaign.startDate)}` : `Offer till ${campaign.endDate ? formatDate(campaign.endDate) : 'No end date'}`}
+        </p>
 
         {/* View Offers Button with Share (Plane) Icon */}
-        <div className="  mt-4">
-        <Link href={`/campaigns/${campaign.id}`}>
-            <button className="w-full bg-blue-600 text-white py-4 px-10 rounded-xl transition">
-              View Offers
-            </button>
-          </Link>
-          {/* <button className="ml-2 text-white bg-blue-600 rounded-full p-3">
-            <FaPaperPlane />
-          </button> */}
+        <div className="mt-4">
+          <button
+            className="w-full bg-blue-600 text-white py-4 px-10 rounded-xl transition"
+            onClick={() => router.push(`/campaigns/${campaign.id}`)}
+          >
+            View Offers
+          </button>
         </div>
       </div>
     </div>
