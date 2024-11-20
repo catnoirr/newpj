@@ -28,7 +28,7 @@ const AdvertisingBanner = () => {
       </div>
     </div>
 
-      <div className="bg-purple-50 md:p-16 p-6 rounded-lg w-full  ">
+      <div className="  p-6 rounded-lg w-full  ">
         <h1 className="md:text-4xl text-3xl font-bold text-purtle-700 mb-4">
           Making Out-of-Home Advertising Engaging, Measurable, and Rewarding
         </h1>
