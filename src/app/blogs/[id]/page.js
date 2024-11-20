@@ -49,8 +49,14 @@ const BlogDetails = () => {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-screen">
-        <p className="text-lg font-medium text-gray-600">Loading...</p>
+      <div className="animate-pulse">
+        <div className="h-20 w-full bg-gray-200 rounded-md"></div>
+        <div className="mt-4 space-y-4">
+          <div className="h-10 w-1/2 bg-gray-200 rounded-md"></div>
+          <div className="h-10 w-3/4 bg-gray-200 rounded-md"></div>
+          <div className="h-10 w-1/2 bg-gray-200 rounded-md"></div>
+          <div className="h-10 w-3/4 bg-gray-200 rounded-md"></div>
+        </div>
       </div>
     );
   }

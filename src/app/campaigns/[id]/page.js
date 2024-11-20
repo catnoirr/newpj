@@ -148,7 +148,11 @@ const CampaignPage = () => {
 
               <div>
                 <h2 className="text-2xl font-bold text-gray-800">
-                  {firstVendor.businessName ? firstVendor.businessName : <span className="blink">Loading..</span>}
+                  {firstVendor.businessName ? (
+                    firstVendor.businessName
+                  ) : (
+                    <span className="inline-block w-40 h-6 bg-gray-100 rounded animate-pulse"></span>
+                  )}
                 </h2>
               <p className="text-sm text-gray-600">
                 {firstVendor.businessCategory ? firstVendor.businessCategory : <span className="blink"></span>}

@@ -68,6 +68,23 @@ function BlogPostsGrid() {
     router.push(`/blogs/${id}`); // Programmatically navigate to the blog post details page
   };
 
+  
+  if (blogPosts.length === 0) {
+    return (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[1, 2, 3, 4, 5, 6].map((i) => (
+          <div key={i} className="animate-pulse">
+            <div className="bg-gray-200 h-60 rounded-t-lg"></div>
+            <div className="p-6 bg-gray-50 rounded-b-lg">
+              <div className="bg-gray-200 h-5 w-1/2 mb-2 rounded"></div>
+              <div className="bg-gray-200 h-7 w-full mb-2 rounded"></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  }
+
   return (
     <section className="p-8 bg-white">
       <h2 className="text-3xl font-semibold text-gray-800 mb-6">All Blog Posts</h2>
