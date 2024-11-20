@@ -23,6 +23,7 @@ const config: Config = {
           // 800:'#4F3A6F',
 
         },
+      
         grey: {
           800: '#6A6A6A',
           400: '#888888',
@@ -51,6 +52,9 @@ const config: Config = {
         grays: {
           100: '#F2F0F5'
           
+        },
+        icon: {
+          100: '#341266',
         },
 
       },

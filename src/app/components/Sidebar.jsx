@@ -44,8 +44,8 @@ export default function Sidebar() {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 ${isMobileMenuOpen ? "right-0" : "-right-full"} lg:left-0 h-screen bg-purtle-700 text-white transition-all duration-300 ${
-          isExpanded ? "w-48" : "w-20"
+        className={`fixed top-0 ${isMobileMenuOpen ? "right-0" : "-right-full"} lg:left-0 h-screen  text-white  bg-white transition-all duration-300 ${
+          isExpanded ? "w-48 " : "w-20"
         } z-40`}
       >
         {/* Logo and Expand/Collapse Button */}
@@ -90,7 +90,7 @@ export default function Sidebar() {
 }
 
 // Sidebar Item Component
-function SidebarItem({ icon, label, route, isExpanded, textColor = "text-white" }) {
+function SidebarItem({ icon, label, route, isExpanded, textColor = "text-icon-100" }) {
   const pathname = usePathname();
   const isActive = pathname === route;
 
@@ -100,8 +100,8 @@ function SidebarItem({ icon, label, route, isExpanded, textColor = "text-white" 
         <button
           className={`flex items-center ${isExpanded ? "justify-start w-full" : "justify-center"} p-3 rounded-lg cursor-pointer 
             ${isActive
-              ? `${isExpanded ? "text-yellow-300" : "text-black bg-white"}` 
-              : `${textColor} ${isExpanded ? "hover:bg-none hover:text-yellow-300" : "hover:bg-white hover:text-black"}`}`}
+              ? `${isExpanded ? "text-black " : "text-black bg-gray-100 shadow-xl"} ` 
+              : `${textColor} ${isExpanded ? "hover:bg-none hover:text-black" : "hover:bg-gray-100 hover:shadow-xl hover:text-blue-600"}`}`}
         >
           <span className="text-lg">{icon}</span>
           {isExpanded && <span className="ml-3">{label}</span>}
