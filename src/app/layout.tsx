@@ -18,7 +18,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "OHH POINT",
   description: "",
-  icons: '/logo.png', // Favicon for the app
+  // icons: '/logo.png', // Favicon for the app
   
 };
 
