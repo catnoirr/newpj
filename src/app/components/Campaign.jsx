@@ -172,8 +172,39 @@ const Campaigns = () => {
     }
   };
 
-  if (loading) return <div>Loading campaigns...</div>;
-  if (error) return <div>{error}</div>;
+  if (loading) {
+    return (
+      <div className="border rounded-lg shadow-lg overflow-hidden relative animate-pulse">
+        {/* Skeleton Image */}
+        <div className="bg-gray-200 h-60 w-full"></div>
+
+        {/* Skeleton Content */}
+        <div className="p-4">
+          <div className="flex justify-between">
+            {/* Title Skeleton */}
+            <div>
+              <div className="bg-gray-200 h-6 w-32 mb-2 rounded"></div>
+              <div className="bg-gray-200 h-4 w-24 rounded"></div>
+            </div>
+            {/* Rating Skeleton */}
+            <div className="flex flex-col items-center gap-1">
+              <div className="bg-gray-200 h-6 w-12 rounded-full"></div>
+              <div className="bg-gray-200 h-6 w-6 rounded-full"></div>
+            </div>
+          </div>
+
+          {/* Discount Skeleton */}
+          <div className="bg-gray-200 h-4 w-3/4 mt-4 rounded"></div>
+
+          {/* Date Skeleton */}
+          <div className="bg-gray-200 h-3 w-40 mt-2 rounded"></div>
+
+          {/* Button Skeleton */}
+          <div className="bg-gray-200 h-10 w-full mt-6 rounded-xl"></div>
+        </div>
+      </div>
+    );
+  }  if (error) return <div>{error}</div>;
 
   return (
     <div className="p-8">

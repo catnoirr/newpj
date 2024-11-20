@@ -45,9 +45,24 @@ function RecentBlogPosts() {
 
   if (!latestBlog) {
     return (
-      <div className="flex items-center justify-center h-60">
-        <p className="text-lg text-gray-500">Loading the latest blog...</p>
-      </div>
+      <section className="p-6 bg-white shadow-md rounded-lg">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-6">
+          Recent Blog Post
+        </h2>
+        {/* Loading Placeholder */}
+        <div className="animate-pulse">
+          <div className="bg-gray-200 h-64 rounded-t-lg"></div>
+          <div className="p-6 bg-gray-50 rounded-b-lg">
+            <div className="bg-gray-200 h-5 w-1/2 mb-2 rounded"></div>
+            <div className="bg-gray-200 h-7 w-full mb-2 rounded"></div>
+            <div className="bg-gray-200 h-4 w-3/4 mb-4 rounded"></div>
+            <div className="flex gap-2">
+              <div className="bg-gray-200 h-6 w-12 rounded-full"></div>
+              <div className="bg-gray-200 h-6 w-16 rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </section>
     );
   }
 
