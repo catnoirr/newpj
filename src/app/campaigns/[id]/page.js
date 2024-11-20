@@ -285,7 +285,7 @@ const CampaignPage = () => {
         {activeTab === 'offers' && (
           <div className="flex flex-col gap-4 w-full p-4 border-2 shadow-lg bg-white">
             <div className="flex justify-between items-center text-2xl">
-              <h1>Get <span className="font-bold">{campaign.vendors?.[0]?.firstPrize}</span> off on any items of {firstVendor.shopName}</h1>
+              <h1>Get <span className="font-bold">{campaign.vendors?.[0]?.firstPrize}</span> off on any items of {firstVendor.businessName}</h1>
               <img src="/shopoffer.png" alt=" " />
             </div>
             <div className="flex justify-end">T&C Applied</div>

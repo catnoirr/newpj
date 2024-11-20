@@ -5,13 +5,7 @@ import { db } from '../../../firebaseConfig'; // Ensure correct Firebase configu
 import { collection, getDocs, getDoc} from 'firebase/firestore';
 import { useRouter } from 'next/navigation';
 
-// Helper function to safely format Firebase Timestamp to a readable date string
-// const formatDate = (timestamp) => {
-//   if (timestamp && timestamp.toDate && typeof timestamp.toDate === 'function') {
-//     return new Date(timestamp.toDate()).toLocaleDateString();
-//   }
-//   return 'N/A'; // Return a fallback string if there's no valid timestamp
-// };
+
 
 
 // Helper function to convert various formats to Date
