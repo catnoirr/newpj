@@ -160,7 +160,15 @@ const Campaigns = () => {
     }
   };
 
-  if (loading) return <div>Loading campaigns...</div>;
+  if (loading) {
+    return (
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-16 p-6">
+        {[...Array(itemsPerPage)].map((_, i) => (
+          <div key={i} className="bg-gray-200 rounded-lg p-4 h-56 animate-pulse" />
+        ))}
+      </div>
+    );
+  }
   if (error) return <div>{error}</div>;
 
   return (

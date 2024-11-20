@@ -44,7 +44,7 @@ export default function Sidebar() {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 ${isMobileMenuOpen ? "right-0" : "-right-full"} lg:left-0 h-screen  text-white  bg-white transition-all duration-300 ${
+        className={`fixed top-0 ${isMobileMenuOpen ? "right-0" : "-right-full"} lg:left-0 h-screen  text-white  bg-white transition-all duration-300  ${
           isExpanded ? "w-48 " : "w-20"
         } z-40`}
       >
@@ -62,8 +62,8 @@ export default function Sidebar() {
 
         {/* Sidebar Items */}
         <div
-          className={`flex flex-col mt-4 space-y-4 ${
-            isExpanded ? "items-start" : "items-center"
+          className={`flex flex-col  mt-4 space-y-4  ${
+            isExpanded ? "items-start p-2" : "items-center"
           }`}
         >
           <SidebarItem icon={<FaHome />} label="Home" route="/" isExpanded={isExpanded} />
