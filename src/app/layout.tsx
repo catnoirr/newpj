@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Footer from "./components/Footer"; // Adjust path if necessary
-import Sidebar from "./components/Sidebar"; // Import Sidebar component
+// import Sidebar from "./components/Sidebar"; // Import Sidebar component
 import "./globals.css";
 import ResponsiveMenu from "./components/ResponsiveMenu";
 
