@@ -326,7 +326,7 @@ const CampaignPage = () => {
         </div>
 
         {/* Verified Vendor */}
-        <div className="p-6 bg-white">
+        <div className="p-6 bg-white w-full">
           <h3 className="text-lg font-bold text-gray-800">Verified Vendor</h3>
           <p className="text-gray-600">
             {firstVendor.address }
