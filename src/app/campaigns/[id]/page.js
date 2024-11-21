@@ -297,13 +297,15 @@ const CampaignPage = () => {
         )}
 
         {activeTab === 'images' && (
-          <div className="flex flex-col gap-4 w-full p-4 border-2 shadow-lg bg-white">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full p-4 border-2 shadow-lg bg-white">
             {/* Implement image gallery here */}
-            <div className="flex  items-center flex-wrap gap-10 flex-col md:flex-row ">
-            <div className="border-2 rounded "><img src={firstVendor.shopImage}  alt="shop image" className="object-contain w-60 h-60" /></div>
-            <div className="border-2 rounded "><img src={campaign.adCreative} alt=""  className="object-contain w-60 h-60 "/></div>
-          </div>       
-             </div>
+            <div className="border-2 rounded">
+              <img src={firstVendor.shopImage} alt="shop image" className="object-contain w-full h-full" />
+            </div>
+            <div className="border-2 rounded">
+              <img src={campaign.adCreative} alt="" className="object-contain w-full h-full " />
+            </div>
+          </div>
         )}
         </div>
 
