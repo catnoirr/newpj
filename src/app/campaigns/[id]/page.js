@@ -250,7 +250,8 @@ const CampaignPage = () => {
                       <div key={index} className="flex justify-between items-center text-gray-600 gap-16">
                         <span>{day}</span>
                         <span>
-                          {firstVendor.openingHours && firstVendor.closingHours && `${new Date(`1970-01-01T${firstVendor.openingHours}Z`).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: true })} : ${new Date(`1970-01-01T${firstVendor.closingHours}Z`).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: true })}`}
+                          {/* {firstVendor.openingHours && firstVendor.closingHours && `${new Date(`1970-01-01T${firstVendor.openingHours}Z`).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: true })} - ${new Date(`1970-01-01T${firstVendor.closingHours}Z`).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: true })}`} */}
+                          {firstVendor.openingHours && firstVendor.closingHours && `${firstVendor.openingHours} - ${firstVendor.closingHours}`}
                         </span>
                       </div>
                     ))}
