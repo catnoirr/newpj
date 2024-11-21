@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import Footer from "./components/Footer"; // Adjust path if necessary
 import Sidebar from "./components/Sidebar"; // Import Sidebar component
 import "./globals.css";
+import ResponsiveMenu from "./components/ResponsiveMenu";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -34,7 +35,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
         {/* Sidebar */}
-        <Sidebar /> {/* Add Sidebar here */}
+        {/* <Sidebar /> Add Sidebar here */}
+        <ResponsiveMenu />
 
         {/* Main content area */}
         <main className="flex-grow lg:ml-20"> {/* Adjust margin-left based on sidebar size */}
