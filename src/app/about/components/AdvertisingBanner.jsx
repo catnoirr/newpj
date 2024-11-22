@@ -5,7 +5,7 @@ import { FaCheck } from 'react-icons/fa';
 const AdvertisingBanner = () => {
   return (
     
-    <div className="flex flex-col items-center p-8">
+    <div className="flex flex-col items-center md:pl-8">
 
 <div className="md:flex justify-end p-4 w-full hidden ">
       <div className="flex justify-around bg-purple-50 border border-purple-800 rounded-lg py-3 px-8 w-full max-w-lg">
