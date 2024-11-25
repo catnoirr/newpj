@@ -4,15 +4,15 @@ import { usePathname } from "next/navigation";
 import {
   FaHome,
   FaUser,
-  FaFileAlt,
+  // FaFileAlt,
   // FaCalendarAlt,
   FaQuestionCircle,
   // FaSignOutAlt,
   FaChevronRight,
   FaChevronLeft,
   FaBars,
-  FaRegFileAlt,
-  FaComment
+  // FaRegFileAlt,
+  // FaComment
 } from "react-icons/fa";
 import Link from "next/link";
 
@@ -64,19 +64,19 @@ export default function Sidebar() {
 
         {/* Sidebar Items */}
         <div
-          className={`flex flex-col  mt-4 space-y-4  ${
-            isExpanded ? "items-start p-2" : "items-center"
+          className={`flex flex-col mt-28 space-y-4  ${
+            isExpanded ? "items-start p-2 mt-4" : "items-center"
           }`}
         >
           <SidebarItem icon={<FaHome />} label="Home" route="/" isExpanded={isExpanded} />
-          <SidebarItem icon={<FaUser />} label="Audience" route="/CampusAmbassador" isExpanded={isExpanded} />
-          <SidebarItem icon={<FaFileAlt />} label="Blogs" route="/blogs" isExpanded={isExpanded} />
+          <SidebarItem icon={<FaUser />} label="Advertise" route="/advertise" isExpanded={isExpanded} />
+          {/* <SidebarItem icon={<FaFileAlt />} label="Blogs" route="/blogs" isExpanded={isExpanded} /> */}
           <SidebarItem icon={<FaQuestionCircle />} label="About" route="/about" isExpanded={isExpanded} />
 
           <div className="border-t border-gray-300 my-2"></div>
 
-          <SidebarItem icon={<FaComment />} label="Engagements" route="/engagements" isExpanded={isExpanded} />
-          <SidebarItem icon={<FaRegFileAlt />} label="CaseStudy" route="/casestudy" isExpanded={isExpanded}  />
+          {/* <SidebarItem icon={<FaComment />} label="Engagements" route="/engagements" isExpanded={isExpanded} />
+          <SidebarItem icon={<FaRegFileAlt />} label="CaseStudy" route="/casestudy" isExpanded={isExpanded}  /> */}
         </div>
       </div>
 

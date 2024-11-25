@@ -45,6 +45,11 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-4">Brand Login</h3>
           <ul className="text-gray-400 space-y-2">
             <li>
+              <button onClick={() => handleNavigation('/blogs')} className="hover:text-white">
+                Blog
+              </button>
+            </li>
+            <li>
               <button onClick={() => handleNavigation('/casestudy')} className="hover:text-white">
                 Case Study
               </button>
@@ -59,6 +64,12 @@ const Footer = () => {
                 Sponsorship
               </button>
             </li>
+            <li>
+              <button onClick={() => handleNavigation('/joincomunity')} className="hover:text-white">
+                Join Community
+              </button>
+            </li>
+           
           </ul>
         </div>
 
