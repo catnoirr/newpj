@@ -17,7 +17,7 @@ const EventEngagement = () => {
                 <img src="elipse1.png" alt="" className="absolute left-80 -top-10 z-40 hidden md:block" />
 
                 <div className="border p-10 rings relative">
-                <img src="elipse3.png" alt="" className="absolute top-40 -right-16 z-40 w-40"/>
+                <img src="elipse3.png" alt="" className="absolute top-40 -right-16 z-40 w-40 hidden"/>
                 <div className=" rounded-full w-28 bg-black h-16  justify-center items-center absolute z-40 top-72 left-60 hidden md:flex"> <FaLinkedinIn className="text-4xl text-white " /> </div>
                 
 
